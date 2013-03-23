@@ -33,3 +33,61 @@ Your work will be assessed on its:
 - Implementation: is the code well-structured?
 - Robustness: is the code secure, and well-tested?
 - Maintainability: is the code well-documented?
+
+
+List of tests for the different features groupsed into scenarios
+================================================================
+
+A person visits the website
+- A "registration" process should be prepared.
+- A "registration" form should be able to accept input.
+
+A person enters data into the registration form.
+- A "registration" process should be prepared.
+- A "registration" form should be able to accept input.
+- The person must supply a valid email address during the registration process.
+- The email address supplied by a person during registration must not already be in use.
+- The email address must be hashed for verification at a later stage.
+- The person must provide a valid screen name during the registration process.
+- The screen name must be at least one character in length.
+- The screen name must not already be in use by another person.
+
+A person enters incorrect information into the registration form.
+- A person has entered no email address.
+- A person has entered no screen name.
+- A person has entered an email address which is already in use.
+- A person has entered a screen name which is already in use.
+
+A person enters correct information into the registration form.
+- A person has entered a valid email address.
+- A person has entered a valid screen name.
+- A person has clicked the "complete my registration" button.
+
+A person verifies their registration with bookface.
+- A person has clicked the registration hyperlink in the confirmation email that was sent to them within the 48 hour time limit.
+- A person's account is activated.
+- A person is redirected to another page after their account is activated.
+
+A person does not verify their registration with bookface.
+- A person does not click the registration hyperlink in the confirmation email that was sent to them within 48 hours time limit.
+- Unverified registration records are removed after a 48 hour period.
+
+A person clicks the registration hyperlink in the confirmation email after the 48 hour time limit.
+- A person's registration record is removed.
+- A person is redirected to a different page.
+
+A person clicks the registration hyperlink in the confirmation email after confirming their registration with bookface.
+- A person's registration record is checked.
+- A person is redirected to a different page.
+
+A person visits the bookface after confirming their registration.
+
+A person views their bookface account overview web page.
+
+A person views their bookface account settings web page.
+
+A person views their bookface account favourite books web page.
+
+A person views their bookface account authors web page.
+
+A person views their bookface account book lising web page.
