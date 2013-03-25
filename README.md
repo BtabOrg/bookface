@@ -167,6 +167,7 @@ Person
 - Identifier [bigint,not null,auto increment,PK]
 - Screen name [varchar 255,not null]
 - Email address [varchar 255, not null]
+- Password [varchar 255, not null]
 
 User
 - Version [bigint,not null]
@@ -187,6 +188,7 @@ Book
 Comments
 - Version [bigint, not null]
 - Identifier [bigint, not null, auto increment, PK]
+- User.Identifier [bigint, not null, index "comment_user" :- User.PK update/delete cascade]
 - Book.Identifier [bigint, not null, index "comment_book" :- Book.PK update/delete cascade]
 - Description [smalltext, not null]
 
@@ -209,7 +211,12 @@ Author
 - The 'authored' relationship with Book is mandatory, the relationship is total. A Book must have an Author.
 
 Book
+- The 'authored' relationship with Author is mandatory, the relationship is total. A Book must have an Author.
 
 Comments
+- The 'created' relationship with User is mandatory, the relationship is total. A Comment is created by a User.
+- The 'has' relationship with Book is optional, the relationship is partial. A Book may not have any Comments.
 
 Favourites
+- The 'is' relationship with User is optional, the relationship is partial. A User may not have any Favourites.
+- The  'listed as' relationship with Book is manadatory, the relationship is total. A Favourite can not exist if it is not associated with a Book which is listed.
