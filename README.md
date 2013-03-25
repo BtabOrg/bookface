@@ -130,13 +130,12 @@ A person views their bookface account favourite books (which is the my favourite
 - A person can toggle their choice upon a book (it is a favourite/it is not a favourite).
 
 A person views their bookface account authors (which is the authors) web page.
-- The person shold be presented with a list of their authors.
+- The person shold be presented with a list of the authors.
 - The listing should be in chronological order (newest entry at the start of the listing).
 - The list can be presented in reverse chronological order (oldest entry at the start of the listing).
 - The list can be presented in alphanumerical order (lower numerical values followed by alphabetical values [0-10 A-Z]).
 - The list can be presented in alphanumerical order (alphabetical values followed by numerical values [Z-A 10-0]).
 - A person can enter a search term and view the result(s).
-- A person can toggle their choice upon an author (they are a favourite/they are not a favourite).
 - A person can create an entry detailing the name of an author which does not already exist.
 - A person can update an entry detailing the name of an author which does not have any references associated with it (other people have selected this author to be a favourite).
 - A person can remove an entry detailing the name of an author which does not have any references associated with it (other people have selected this author to be a favourite).
@@ -144,9 +143,12 @@ A person views their bookface account authors (which is the authors) web page.
 - A person can only remove an author when all references are removed first.
 
 A person views their bookface account book (which is the my books) lising web page.
-- The person should be presented with a list of their authors.
+- The person should be presented with a list of their favourite books.
 - The listing should be in chronological order (newest entry at the satrt of the listing).
 - The list can be presented in reverse chronological order (oldest entry at the start of the listing).
 - The list can be presented in alphanumerical order (lower numerical values followed by alphabetical values [0-10 A-Z]).
 - The list can be presented in alphanumerical order (alphabetical values followed by numerical values [Z-A 10-0]).
 - A person can enter a search term and view the result(s).
+
+A person views other users who have listed a book as also being their favourite.
+- All users who have listed a book as being their favourite can be presented in an ordered list.
