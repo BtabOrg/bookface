@@ -152,3 +152,64 @@ A person views their bookface account book (which is the my books) lising web pa
 
 A person views other users who have listed a book as also being their favourite.
 - All users who have listed a book as being their favourite can be presented in an ordered list.
+
+
+Bookface Database Domain
+========================
+The database will store information pertaining to the use of bookface and the preferences of the people who use it.
+The Domain Entities outlines the different database domain entities which are present within the product scenario description.
+- The use of Spring Roo requires the additional attribute of "version" applicable to the Spring environment versioning.
+
+Domain Entities
+===============
+Person
+- Version [bigint,not null]
+- Identifier [bigint,not null,auto increment,PK]
+- Screen name [varchar 255,not null]
+- Email address [varchar 255, not null]
+
+User
+- Version [bigint,not null]
+- Identifier [bigint,not null,auto increment, PK]
+- Person.Identifier [bigint, not null,index "user_person" :- Person.PK update/delete cascade]
+
+Author
+- Version [bigint,not null]
+- Identifier [bigint,not null,auto increment, PK]
+- Name [varchar 255, not null]
+
+Book
+- Version [bigint,not null]
+- Identifier [bigint,not null,auto increment, PK]
+- Author.Identifier [bigint, not null, index "book_author" :- Author.PK update/delete cascade]
+- Title [varchar 255, not null]
+
+Comments
+- Version [bigint, not null]
+- Identifier [bigint, not null, auto increment, PK]
+- Book.Identifier [bigint, not null, index "comment_book" :- Book.PK update/delete cascade]
+- Description [smalltext, not null]
+
+Favourites
+- Version [bigint, not null]
+- Identifier [bigint, not null, auto increment, PK]
+- User.Identifier [bigint, not null, index "favourites_user" :- User.PK update/delete cascade]
+- Book.Identifier [bigint, not null, index "favourites_book" :- Book.PK update/delete cascade]
+
+Constraints
+===========
+Person
+- The 'is' relationship with User is mandatory, the relationship is total. A Person represents a User.
+
+User
+- The 'is' relationship with Person is mandatory, the relationship is total. A User is a Person.
+- The 'has' relationship with Favourites is optional, the relationship is partial. A User may not list a Book as a favourite.
+
+Author
+- The 'authored' relationship with Book is mandatory, the relationship is total. A Book must have an Author.
+
+Book
+
+Comments
+
+Favourites
