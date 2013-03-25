@@ -39,8 +39,10 @@ List of tests for the different features groupsed into scenarios
 ================================================================
 
 A person visits the website
-- A "registration" process should be prepared.
-- A "registration" form should be able to accept input.
+- A person can use the registration form.
+- A registration form should be able to accept input.
+- A person can use the login form.
+- A login form should be able to accpet input.
 
 A person enters data into the registration form.
 - A "registration" process should be prepared.
@@ -51,16 +53,20 @@ A person enters data into the registration form.
 - The person must provide a valid screen name during the registration process.
 - The screen name must be at least one character in length.
 - The screen name must not already be in use by another person.
+- The person must supply a password which is a minimum of four characters in length.
 
 A person enters incorrect information into the registration form.
-- A person has entered no email address.
-- A person has entered no screen name.
+- A person has not entered an email address.
+- A person has not entered a screen name.
 - A person has entered an email address which is already in use.
 - A person has entered a screen name which is already in use.
+- A person has not entered a password.
+- A person has entered a password which is less than four characters in length.
 
 A person enters correct information into the registration form.
 - A person has entered a valid email address.
 - A person has entered a valid screen name.
+- A person has entered a password which has at least four characters.
 - A person has clicked the "complete my registration" button.
 
 A person verifies their registration with bookface.
@@ -81,13 +87,66 @@ A person clicks the registration hyperlink in the confirmation email after confi
 - A person is redirected to a different page.
 
 A person visits the bookface after confirming their registration.
+- A person can use the login form.
+- A person can use the registration form.
+
+A person uses the login form.
+- A person can enter their screen name or email address in the text entry field.
+- A person can enter their password into the text entry field.
+
+A person enters incorrect credentials into the login form.
+- A person enters a non valid email address, screen name and or password.
+
+A person has forgot their password and clicks the "I've forgotten my password" hyperlink.
+- The person is redirected to a different page.
+- The person is prompted to enter the email address used for their unique registration.
+
+A person has forgot their screen name and clicks the "I've forgotten my screen name" hyperlink.
+- The person is redirected to a different page.
+- The person is prompted to enter the email address used for their unique registration.
 
 A person views their bookface account overview web page.
+- There are four option groups: my account, my authors, my books, my favourites. Which will facilitate user requirements.
+- The user should be able to view the "my account" options.
+- The user should be able to view the "my authors" options.
+- The user should be able to view the "my books" options.
+- The user should be able to view the "my favourites" options.
+- The user should be able to log out of their account.
 
-A person views their bookface account settings web page.
+A person views their bookface account settings (which is the my account option) web page.
+- A peron should be able to change the details of their user.
+- A person should be able to change the email address registered with the bookface to another unique email address.
+- A person should be able to change their screen name to another unique screen name.
+- A person should receive an email detailing the change in the registered account email address.
+- A person should receive an email detailing the change in the registered account screen name.
 
-A person views their bookface account favourite books web page.
+A person views their bookface account favourite books (which is the my favourites) web page.
+- The person should be presented with a list of their favourite books.
+- The listing should be in chronological order (newest entry at the start of the listing).
+- The list can be presented in reverse chronological order (oldest entry at the start of the listing).
+- The list can be presented in alphanumerical order (lower numerical values followed by alphabetical values [0-10 A-Z]).
+- The list can be presented in alphanumerical order (alphabetical values followed by numerical values [Z-A 10-0]).
+- A person can enter a search term and view the result(s).
+- A person can toggle their choice upon a book (it is a favourite/it is not a favourite).
 
-A person views their bookface account authors web page.
+A person views their bookface account authors (which is the authors) web page.
+- The person shold be presented with a list of their authors.
+- The listing should be in chronological order (newest entry at the start of the listing).
+- The list can be presented in reverse chronological order (oldest entry at the start of the listing).
+- The list can be presented in alphanumerical order (lower numerical values followed by alphabetical values [0-10 A-Z]).
+- The list can be presented in alphanumerical order (alphabetical values followed by numerical values [Z-A 10-0]).
+- A person can enter a search term and view the result(s).
+- A person can toggle their choice upon an author (they are a favourite/they are not a favourite).
+- A person can create an entry detailing the name of an author which does not already exist.
+- A person can update an entry detailing the name of an author which does not have any references associated with it (other people have selected this author to be a favourite).
+- A person can remove an entry detailing the name of an author which does not have any references associated with it (other people have selected this author to be a favourite).
+- A person who enters the name of an author which is already contained within the database simply references the previously created record.
+- A person can only remove an author when all references are removed first.
 
-A person views their bookface account book lising web page.
+A person views their bookface account book (which is the my books) lising web page.
+- The person should be presented with a list of their authors.
+- The listing should be in chronological order (newest entry at the satrt of the listing).
+- The list can be presented in reverse chronological order (oldest entry at the start of the listing).
+- The list can be presented in alphanumerical order (lower numerical values followed by alphabetical values [0-10 A-Z]).
+- The list can be presented in alphanumerical order (alphabetical values followed by numerical values [Z-A 10-0]).
+- A person can enter a search term and view the result(s).
