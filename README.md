@@ -182,7 +182,7 @@ Author
 Book
 - Version [bigint,not null]
 - Identifier [bigint,not null,auto increment, PK]
-- Author.Identifier [bigint, not null, index "book_author" :- Author.PK update/delete cascade]
+- Author.Identifier [bigint, not null, index "book_author" :- Author.PK update cascade/delete nothing]
 - Title [varchar 255, not null]
 
 Comments
