@@ -12,6 +12,9 @@ import org.springframework.roo.addon.tostring.RooToString;
 public class Person {
 
     @NotNull
+    private Number identifier;
+    
+    @NotNull
     @Size(min = 2, max = 255)
     private String screenName;
 

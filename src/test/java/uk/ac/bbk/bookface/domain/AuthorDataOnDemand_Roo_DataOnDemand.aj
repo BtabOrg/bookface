@@ -24,8 +24,14 @@ privileged aspect AuthorDataOnDemand_Roo_DataOnDemand {
     
     public Author AuthorDataOnDemand.getNewTransientAuthor(int index) {
         Author obj = new Author();
+        setIdentifier(obj, index);
         setName(obj, index);
         return obj;
+    }
+    
+    public void AuthorDataOnDemand.setIdentifier(Author obj, int index) {
+        Number identifier = null;
+        obj.setIdentifier(identifier);
     }
     
     public void AuthorDataOnDemand.setName(Author obj, int index) {

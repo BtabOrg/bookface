@@ -1,0 +1,35 @@
+<aspectj>
+<aspects>
+<aspect name="uk.ac.bbk.bookface.domain.BookFaceUser_Roo_Jpa_Entity"/>
+<aspect name="uk.ac.bbk.bookface.domain.Person_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.Book_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.Comments_Roo_JavaBean"/>
+<aspect name="uk.ac.bbk.bookface.domain.BookFaceUser_Roo_Jpa_ActiveRecord"/>
+<aspect name="uk.ac.bbk.bookface.domain.Favourites_Roo_JavaBean"/>
+<aspect name="uk.ac.bbk.bookface.domain.Author_Roo_Jpa_Entity"/>
+<aspect name="uk.ac.bbk.bookface.domain.Author_Roo_Jpa_ActiveRecord"/>
+<aspect name="uk.ac.bbk.bookface.domain.Book_Roo_JavaBean"/>
+<aspect name="uk.ac.bbk.bookface.domain.BookFaceUser_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.Favourites_Roo_ToString"/>
+<aspect name="uk.ac.bbk.bookface.domain.Comments_Roo_ToString"/>
+<aspect name="uk.ac.bbk.bookface.domain.Comments_Roo_Jpa_Entity"/>
+<aspect name="uk.ac.bbk.bookface.domain.Book_Roo_Jpa_ActiveRecord"/>
+<aspect name="uk.ac.bbk.bookface.domain.Person_Roo_JavaBean"/>
+<aspect name="uk.ac.bbk.bookface.domain.Book_Roo_Jpa_Entity"/>
+<aspect name="uk.ac.bbk.bookface.domain.Person_Roo_ToString"/>
+<aspect name="uk.ac.bbk.bookface.domain.Person_Roo_Jpa_ActiveRecord"/>
+<aspect name="uk.ac.bbk.bookface.domain.BookFaceUser_Roo_JavaBean"/>
+<aspect name="uk.ac.bbk.bookface.domain.BookFaceUser_Roo_ToString"/>
+<aspect name="uk.ac.bbk.bookface.domain.Comments_Roo_Jpa_ActiveRecord"/>
+<aspect name="uk.ac.bbk.bookface.domain.Person_Roo_Jpa_Entity"/>
+<aspect name="uk.ac.bbk.bookface.domain.Favourites_Roo_Jpa_Entity"/>
+<aspect name="uk.ac.bbk.bookface.domain.Author_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.Favourites_Roo_Jpa_ActiveRecord"/>
+<aspect name="uk.ac.bbk.bookface.domain.Author_Roo_JavaBean"/>
+<aspect name="uk.ac.bbk.bookface.domain.Book_Roo_ToString"/>
+<aspect name="uk.ac.bbk.bookface.domain.Author_Roo_ToString"/>
+<aspect name="uk.ac.bbk.bookface.domain.Comments_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.Favourites_Roo_Configurable"/>
+</aspects>
+</aspectj>
+

@@ -7,6 +7,14 @@ import uk.ac.bbk.bookface.domain.Person;
 
 privileged aspect Person_Roo_JavaBean {
     
+    public Number Person.getIdentifier() {
+        return this.identifier;
+    }
+    
+    public void Person.setIdentifier(Number identifier) {
+        this.identifier = identifier;
+    }
+    
     public String Person.getScreenName() {
         return this.screenName;
     }

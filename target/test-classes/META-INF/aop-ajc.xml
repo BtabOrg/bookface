@@ -1,0 +1,29 @@
+<aspectj>
+<aspects>
+<aspect name="uk.ac.bbk.bookface.domain.PersonDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="uk.ac.bbk.bookface.domain.FavouritesIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="uk.ac.bbk.bookface.domain.PersonIntegrationTest_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.BookIntegrationTest_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.PersonIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="uk.ac.bbk.bookface.domain.AuthorDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="uk.ac.bbk.bookface.domain.BookDataOnDemand_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.BookIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="uk.ac.bbk.bookface.domain.CommentsDataOnDemand_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.BookFaceUserDataOnDemand_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.FavouritesDataOnDemand_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.BookFaceUserIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="uk.ac.bbk.bookface.domain.BookFaceUserDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="uk.ac.bbk.bookface.domain.FavouritesIntegrationTest_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.AuthorDataOnDemand_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.CommentsIntegrationTest_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.BookFaceUserIntegrationTest_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.CommentsIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="uk.ac.bbk.bookface.domain.FavouritesDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="uk.ac.bbk.bookface.domain.AuthorIntegrationTest_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.BookDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="uk.ac.bbk.bookface.domain.PersonDataOnDemand_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.AuthorIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="uk.ac.bbk.bookface.domain.CommentsDataOnDemand_Roo_DataOnDemand"/>
+</aspects>
+</aspectj>
+

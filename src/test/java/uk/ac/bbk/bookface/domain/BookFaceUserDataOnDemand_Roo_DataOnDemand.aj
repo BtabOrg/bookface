@@ -29,7 +29,13 @@ privileged aspect BookFaceUserDataOnDemand_Roo_DataOnDemand {
     
     public BookFaceUser BookFaceUserDataOnDemand.getNewTransientBookFaceUser(int index) {
         BookFaceUser obj = new BookFaceUser();
+        setIdentifier(obj, index);
         return obj;
+    }
+    
+    public void BookFaceUserDataOnDemand.setIdentifier(BookFaceUser obj, int index) {
+        Number identifier = null;
+        obj.setIdentifier(identifier);
     }
     
     public BookFaceUser BookFaceUserDataOnDemand.getSpecificBookFaceUser(int index) {

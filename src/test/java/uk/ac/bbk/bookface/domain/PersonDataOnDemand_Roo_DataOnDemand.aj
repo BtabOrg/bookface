@@ -25,6 +25,7 @@ privileged aspect PersonDataOnDemand_Roo_DataOnDemand {
     public Person PersonDataOnDemand.getNewTransientPerson(int index) {
         Person obj = new Person();
         setEmailAddress(obj, index);
+        setIdentifier(obj, index);
         setPassword(obj, index);
         setScreenName(obj, index);
         return obj;
@@ -36,6 +37,11 @@ privileged aspect PersonDataOnDemand_Roo_DataOnDemand {
             emailAddress = emailAddress.substring(0, 255);
         }
         obj.setEmailAddress(emailAddress);
+    }
+    
+    public void PersonDataOnDemand.setIdentifier(Person obj, int index) {
+        Number identifier = null;
+        obj.setIdentifier(identifier);
     }
     
     public void PersonDataOnDemand.setPassword(Person obj, int index) {

@@ -8,6 +8,14 @@ import uk.ac.bbk.bookface.domain.Person;
 
 privileged aspect BookFaceUser_Roo_JavaBean {
     
+    public Number BookFaceUser.getIdentifier() {
+        return this.identifier;
+    }
+    
+    public void BookFaceUser.setIdentifier(Number identifier) {
+        this.identifier = identifier;
+    }
+    
     public Person BookFaceUser.getPerson() {
         return this.person;
     }

@@ -37,3 +37,12 @@ field string --fieldName description --notNull --sizeMin 2
 entity jpa --class ~.domain.Favourites --testAutomatically
 field reference --fieldName book --type ~.domain.Book
 field reference --fieldName bookFaceUser --type ~.domain.BookFaceUser
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-26 21:05:15
+hint
+perform package
+hint eclipse
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-26 21:07:51
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-26 21:21:32
+hint
+perform package

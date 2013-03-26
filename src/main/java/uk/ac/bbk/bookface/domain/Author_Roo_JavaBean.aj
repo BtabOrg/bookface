@@ -7,6 +7,14 @@ import uk.ac.bbk.bookface.domain.Author;
 
 privileged aspect Author_Roo_JavaBean {
     
+    public Number Author.getIdentifier() {
+        return this.identifier;
+    }
+    
+    public void Author.setIdentifier(Number identifier) {
+        this.identifier = identifier;
+    }
+    
     public String Author.getName() {
         return this.name;
     }
