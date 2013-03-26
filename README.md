@@ -35,7 +35,7 @@ Your work will be assessed on its:
 - Maintainability: is the code well-documented?
 
 
-List of tests for the different features groupsed into scenarios
+List of tests for the different features grouped into scenarios
 ================================================================
 
 A person visits the website
