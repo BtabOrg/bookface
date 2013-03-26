@@ -1,0 +1,39 @@
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-26 17:45:16
+hint
+project --topLevelPackage uk.ac.bbk.bookface
+hint
+jpa setup --provider HIBERNATE --database MYSQL
+hint
+entity jpa --class ~.actor.Person
+hint
+field string screenName
+field string emailAddress
+field string password
+// [failed] entity jpa --class ~.actor.User
+entity jpa --class ~.actor.BookFaceUser
+field set --fieldName person --type ~.actor.Person
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-26 17:58:15
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-26 17:58:38
+hint
+entity jpa --class ~.domain.Person --testAutomatically 
+field string --fieldName screenName --notNull --sizeMin 2 --sizeMax 255
+field string --fieldName emailAddress --notNull --sizeMin 6 --sizeMax 255
+field string --fieldName password --notNull --sizeMin 4 --sizeMax 255
+// [failed] entity jpa --class ~.domain.User --testAutomatically 
+entity jpa --class ~.domain.BookFaceUser --testAutomatically
+field reference --fieldName person --type ~.domain.Person
+entity jpa --class ~.domain.Author --testAutomatically 
+field string --fieldName name --notNull --sizeMin 2 --sizeMax 255
+entity jpa --class ~.domain.Book --testAutomatically 
+field set --fieldName author --type ~.domain.Author
+field string --fieldName title --notNull --sizeMin 2 --sizeMax 255
+field string --fieldName description --notNull --sizeMin 2
+entity jpa --class ~.domain.Comments --testAutomatically 
+// [failed] field set --fieldName user --type ~.domain.BookFaceUser
+field set --fieldName bookFaceUser --type ~.domain.BookFaceUser
+field reference --fieldName book --type ~.domain.Book
+field string --fieldName description --notNull --sizeMin 2
+entity jpa --class ~.domain.Favourites --testAutomatically
+field reference --fieldName book --type ~.domain.Book
+field reference --fieldName bookFaceUser --type ~.domain.BookFaceUser
