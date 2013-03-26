@@ -15,6 +15,9 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord
 public class Book {
 
+    @NotNull
+    private Number identifier;
+    
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Author> author = new HashSet<Author>();
 

@@ -24,8 +24,14 @@ privileged aspect BookDataOnDemand_Roo_DataOnDemand {
     
     public Book BookDataOnDemand.getNewTransientBook(int index) {
         Book obj = new Book();
+        setIdentifier(obj, index);
         setTitle(obj, index);
         return obj;
+    }
+    
+    public void BookDataOnDemand.setIdentifier(Book obj, int index) {
+        Number identifier = null;
+        obj.setIdentifier(identifier);
     }
     
     public void BookDataOnDemand.setTitle(Book obj, int index) {

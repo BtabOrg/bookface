@@ -9,6 +9,14 @@ import uk.ac.bbk.bookface.domain.Favourites;
 
 privileged aspect Favourites_Roo_JavaBean {
     
+    public Number Favourites.getIdentifier() {
+        return this.identifier;
+    }
+    
+    public void Favourites.setIdentifier(Number identifier) {
+        this.identifier = identifier;
+    }
+    
     public Book Favourites.getBook() {
         return this.book;
     }

@@ -1,0 +1,8 @@
+2013-03-26 21:35:16,839 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - No database selected
+2013-03-26 21:35:16,855 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - No database selected
+2013-03-26 21:35:16,855 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - No database selected
+2013-03-26 21:35:16,886 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - No database selected
+2013-03-26 21:35:16,901 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - No database selected
+2013-03-26 21:35:16,901 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - No database selected
+2013-03-26 21:35:16,917 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - No database selected
+2013-03-26 21:35:16,917 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - No database selected

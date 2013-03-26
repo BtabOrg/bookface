@@ -33,7 +33,13 @@ privileged aspect FavouritesDataOnDemand_Roo_DataOnDemand {
     
     public Favourites FavouritesDataOnDemand.getNewTransientFavourites(int index) {
         Favourites obj = new Favourites();
+        setIdentifier(obj, index);
         return obj;
+    }
+    
+    public void FavouritesDataOnDemand.setIdentifier(Favourites obj, int index) {
+        Number identifier = null;
+        obj.setIdentifier(identifier);
     }
     
     public Favourites FavouritesDataOnDemand.getSpecificFavourites(int index) {

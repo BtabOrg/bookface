@@ -9,6 +9,14 @@ import uk.ac.bbk.bookface.domain.Book;
 
 privileged aspect Book_Roo_JavaBean {
     
+    public Number Book.getIdentifier() {
+        return this.identifier;
+    }
+    
+    public void Book.setIdentifier(Number identifier) {
+        this.identifier = identifier;
+    }
+    
     public Set<Author> Book.getAuthor() {
         return this.author;
     }

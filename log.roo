@@ -46,3 +46,37 @@ quit
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-26 21:21:32
 hint
 perform package
+hint
+// [failed] test integration --entity
+// [failed] test integration --entity Person
+test integration --entity ~.domain.Person
+test integration --entity ~.domain.Person
+test integration --entity ~.domain.BookFaceUser
+test integration --entity ~.domain.BookFaceUser
+test integration --entity ~.domain.Book
+test integration --entity ~.domain.Book
+// [failed] test integration --entity ~.domain.Favourite
+test integration --entity ~.domain.Favourites
+test integration --entity ~.domain.Favourites
+test integration --entity ~.domain.Comments
+test integration --entity ~.domain.Comments
+hint
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-26 21:33:10
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-26 21:33:49
+perform tests
+jpa setup --database MYSQL --provider HIBERNATE 
+hint
+perform tests
+test integration --entity ~.domain.Person
+// [failed] test integration --entity ~.domain.FacebookPerson
+// [failed] test integration --entity ~.domain.BookFacePerson
+// [failed] test integration --entity ~.domain.BookFacePerson
+// [failed] test integration
+// [failed] test integration
+// [failed] test integration --entity ~.domain.BookFacePerson
+// [failed] test integration --entity ~.domain.BookFacePerson
+test integration --entity ~.domain.Author
+test integration
+hint
+perform package
