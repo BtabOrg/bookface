@@ -80,3 +80,5 @@ test integration --entity ~.domain.Author
 test integration
 hint
 perform package
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-26 22:54:13
