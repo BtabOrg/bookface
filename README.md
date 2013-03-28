@@ -38,75 +38,44 @@ Your work will be assessed on its:
 List of tests for the different features grouped into scenarios
 ================================================================
 
-A person visits the website
-- A person can use the registration form.
-- A registration form should be able to accept input.
-- A person can use the login form.
-- A login form should be able to accpet input.
-
-A person enters data into the registration form.
-- A "registration" process should be prepared.
-- A "registration" form should be able to accept input.
+A person must provide a screen name and email address before they can view any other web pages.
 - The person must supply a valid email address during the registration process.
 - The email address supplied by a person during registration must not already be in use.
-- The email address must be hashed for verification at a later stage.
 - The person must provide a valid screen name during the registration process.
 - The screen name must be at least one character in length.
 - The screen name must not already be in use by another person.
-- The person must supply a password which is a minimum of four characters in length.
 
 A person enters incorrect information into the registration form.
 - A person has not entered an email address.
 - A person has not entered a screen name.
 - A person has entered an email address which is already in use.
 - A person has entered a screen name which is already in use.
-- A person has not entered a password.
-- A person has entered a password which is less than four characters in length.
 
 A person enters correct information into the registration form.
 - A person has entered a valid email address.
 - A person has entered a valid screen name.
-- A person has entered a password which has at least four characters.
-- A person has clicked the "complete my registration" button.
-
-A person verifies their registration with bookface.
-- A person has clicked the registration hyperlink in the confirmation email that was sent to them within the 48 hour time limit.
-- A person's account is activated.
-- A person is redirected to another page after their account is activated.
-
-A person does not verify their registration with bookface.
-- A person does not click the registration hyperlink in the confirmation email that was sent to them within 48 hours time limit.
-- Unverified registration records are removed after a 48 hour period.
-
-A person clicks the registration hyperlink in the confirmation email after the 48 hour time limit.
-- A person's registration record is removed.
-- A person is redirected to a different page.
-
-A person clicks the registration hyperlink in the confirmation email after confirming their registration with bookface.
-- A person's registration record is checked.
-- A person is redirected to a different page.
-
-A person visits the bookface after confirming their registration.
-- A person can use the login form.
-- A person can use the registration form.
 
 A person uses the login form.
-- A person can enter their screen name or email address in the text entry field.
-- A person can enter their password into the text entry field.
+- A person must enter their screen name and email address.
 
 A person enters incorrect credentials into the login form.
-- A person enters a non valid email address, screen name and or password.
+- A person enters a non valid email address and screen name.
 
-A person has forgot their password and clicks the "I've forgotten my password" hyperlink.
+A person has forgot their password and or screen name.
 - The person is redirected to a different page.
 - The person is prompted to enter the email address used for their unique registration.
 
-A person has forgot their screen name and clicks the "I've forgotten my screen name" hyperlink.
-- The person is redirected to a different page.
-- The person is prompted to enter the email address used for their unique registration.
+A person views the authors web page.
+- The page lists all authors and the authors books
+- A person can add an author.
+- A person can log out.
 
-A person views their bookface account overview web page.
-- There are four option groups: my account, my authors, my books, my favourites. Which will facilitate user requirements.
+
+
+---------------
+UPDATING ALL SCENARIOS BELOW.......
+---------------
+
 - The user should be able to view the "my account" options.
 - The user should be able to view the "my authors" options.
 - The user should be able to view the "my books" options.
@@ -162,61 +131,54 @@ The Domain Entities outlines the different database domain entities which are pr
 
 Domain Entities
 ===============
-Person
-- Version [bigint,not null]
-- Identifier [bigint,not null,auto increment,PK]
-- Screen name [varchar 255,not null]
-- Email address [varchar 255, not null]
-- Password [varchar 255, not null]
+person
+- version [bigint, null]
+- identifier [bigint, not null, auto increment, PK]
+- screen_name [varchar 255,not null]
+- email_address [varchar 255, not null]
+- password [varchar 255, not null]
 
-User
-- Version [bigint,not null]
-- Identifier [bigint,not null,auto increment, PK]
-- Person.Identifier [bigint, not null,index "user_person" :- Person.PK update/delete cascade]
+author
+- version [bigint, null]
+- identifier [bigint, not null, auto increment, PK]
+- name [varchar 255, not null]
 
-Author
-- Version [bigint,not null]
-- Identifier [bigint,not null,auto increment, PK]
-- Name [varchar 255, not null]
+book
+- version [bigint, null]
+- identifier [bigint, not null, auto increment, PK]
+- author [bigint, not null, index book_author_idx, FK book_author references author.identifier update no action/delete no action]
+- title [varchar 255, not null]
 
-Book
-- Version [bigint,not null]
-- Identifier [bigint,not null,auto increment, PK]
-- Author.Identifier [bigint, not null, index "book_author" :- Author.PK update cascade/delete nothing]
-- Title [varchar 255, not null]
+comments
+- version [bigint, null]
+- identifier [bigint, not null, auto increment, PK]
+- book [bigint, not null, index comments_book_idx, FK comments_book references book.identifier update no action/delete no action]
+- person [bigint, not null, index comments_person_idx, FK comments_person references person.identifier update no action/delete no action]
+- description [text, not null]
 
-Comments
-- Version [bigint, not null]
-- Identifier [bigint, not null, auto increment, PK]
-- User.Identifier [bigint, not null, index "comment_user" :- User.PK update/delete cascade]
-- Book.Identifier [bigint, not null, index "comment_book" :- Book.PK update/delete cascade]
-- Description [smalltext, not null]
+favourites
+- version [bigint, null]
+- identifier [bigint, not null, auto increment, PK]
+- book [bigint, not null, index favourites_book_idx references book.identifier update no action/delete no action]
+- person [bigint, not null, index favourites_user_idx references person.identifier update no action/delete no action]
 
-Favourites
-- Version [bigint, not null]
-- Identifier [bigint, not null, auto increment, PK]
-- User.Identifier [bigint, not null, index "favourites_user" :- User.PK update/delete cascade]
-- Book.Identifier [bigint, not null, index "favourites_book" :- Book.PK update/delete cascade]
 
 Constraints
 ===========
-Person
-- The 'is' relationship with User is mandatory, the relationship is total. A Person represents a User.
+person
+- The 'created' relationship with comment is optional, the relationship is partial. A person may not create comments.
+- The 'has' relationship with favourite is optional, the relationship is partial. A person may not have favourites.
 
-User
-- The 'is' relationship with Person is mandatory, the relationship is total. A User is a Person.
-- The 'has' relationship with Favourites is optional, the relationship is partial. A User may not list a Book as a favourite.
+author
+- The 'authors' relationship with book is mandatory, the relationship is total. A book must have an author.
 
-Author
-- The 'authored' relationship with Book is mandatory, the relationship is total. A Book must have an Author.
+book
+- The 'authors' relationship with author is mandatory, the relationship is total. A book must have an author.
 
-Book
-- The 'authored' relationship with Author is mandatory, the relationship is total. A Book must have an Author.
+comments
+- The 'created' relationship with person is mandatory, the relationship is total. A comment must be creatd by a person.
+- The 'has' relationship with book is optional, the relationship is partial. The may be no comments on a book.
 
-Comments
-- The 'created' relationship with User is mandatory, the relationship is total. A Comment is created by a User.
-- The 'has' relationship with Book is optional, the relationship is partial. A Book may not have any Comments.
-
-Favourites
-- The 'is' relationship with User is optional, the relationship is partial. A User may not have any Favourites.
-- The  'listed as' relationship with Book is manadatory, the relationship is total. A Favourite can not exist if it is not associated with a Book which is listed.
+favourites
+- The 'is' relationship with person is mandatory, the relationship is total. A favourite must be selected by a person.
+- The 'listed as' relationship with Book is mandatory, the relationship is total. A favourite must have a book associated with it.

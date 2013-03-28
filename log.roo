@@ -1,84 +1,114 @@
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-26 17:45:16
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-28 15:42:30
 hint
-project --topLevelPackage uk.ac.bbk.bookface
+project --topLevelPackage  ac.uk.bbk.bookface
 hint
-jpa setup --provider HIBERNATE --database MYSQL
+jpa setup --database MYSQL --provider HIBERNATE
+hint package
+hint eclipse
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-28 15:48:52
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-28 15:50:34
 hint
-entity jpa --class ~.actor.Person
+entity jpa --class ~.domain.Person
 hint
-field string screenName
-field string emailAddress
-field string password
-// [failed] entity jpa --class ~.actor.User
-entity jpa --class ~.actor.BookFaceUser
-field set --fieldName person --type ~.actor.Person
-quit
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-26 17:58:15
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-26 17:58:38
-hint
+field number --fieldName identifier --type java.lang.Number
+hint relationships
+field string --fieldName screenName --notNull
+field string --fieldName emailAddress --notNull
+field string --fieldName password --notNull
 entity jpa --class ~.domain.Person --testAutomatically 
-field string --fieldName screenName --notNull --sizeMin 2 --sizeMax 255
-field string --fieldName emailAddress --notNull --sizeMin 6 --sizeMax 255
-field string --fieldName password --notNull --sizeMin 4 --sizeMax 255
-// [failed] entity jpa --class ~.domain.User --testAutomatically 
-entity jpa --class ~.domain.BookFaceUser --testAutomatically
-field reference --fieldName person --type ~.domain.Person
-entity jpa --class ~.domain.Author --testAutomatically 
+entity jpa --class ~.domain.Author --testAutomatically
+field number --fieldName identifier --type java.lang.Number
+field string --fieldName name --notNull --sizeMin  2 --sizeMax 255
+entity jpa --class ~.domain.Person --testAutomatically 
+field string --fieldName screenName --notNull --sizeMin  2 --sizeMax 255
+field string --fieldName email --notNull --sizeMin  2 --sizeMax 255
+field string --fieldName password --notNull --sizeMin  2 --sizeMax 255
+entity jpa --class ~.domain.Author --testAutomatically
+field number --fieldName identifier --type java.lang.Number --notNull
+entity jpa --class ~.domain.Person --testAutomatically 
+field number --fieldName identifier --type java.lang.Number --notNull
+entity jpa --class ~.domain.Author --testAutomatically
+field number --fieldName identifier --type java.lang.Number --notNull
 field string --fieldName name --notNull --sizeMin 2 --sizeMax 255
-entity jpa --class ~.domain.Book --testAutomatically 
-field set --fieldName author --type ~.domain.Author
+entity jpa --class ~.domain.Book --testAutomatically
+field number --fieldName identifier --type java.lang.Number --notNull
+hint relationships
+entity jpa --class ~.domain.Author --testAutomatically
+field set --fieldName books --class Author --type Book --mappedBy author
+field reference --fieldName author --class Book --type Author --notNull
+// [failed] field number --fieldName identifier --type java.lang.Number --notNull
 field string --fieldName title --notNull --sizeMin 2 --sizeMax 255
-field string --fieldName description --notNull --sizeMin 2
-entity jpa --class ~.domain.Comments --testAutomatically 
-// [failed] field set --fieldName user --type ~.domain.BookFaceUser
-field set --fieldName bookFaceUser --type ~.domain.BookFaceUser
-field reference --fieldName book --type ~.domain.Book
+entity jpa --class ~.domain.Comments --testAutomatically
+field number --fieldName identifier --type java.lang.Number --notNull
+entity jpa --class ~.domain.Person --testAutomatically
+entity jpa --class ~.domain.Person --testAutomatically
+field string --fieldName emailAddress --notNull --sizeMin 6 --sizeMax 255
+entity jpa --class ~.domain.Comments --testAutomatically
+field number --fieldName identifier --type java.lang.Number
+hint relationships
+field reference --fieldName person --class Comments --type Person --notNull
+field reference --fieldName book --class Comments --type Book --notNull
 field string --fieldName description --notNull --sizeMin 2
 entity jpa --class ~.domain.Favourites --testAutomatically
-field reference --fieldName book --type ~.domain.Book
-field reference --fieldName bookFaceUser --type ~.domain.BookFaceUser
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-26 21:05:15
+field number --fieldName identifier --type java.lang.Number
+field reference --fieldName person --class Favourites --type Person --notNull
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-28 16:40:05
 hint
+perform package hint
+perform package
+entity jpa --class ~.domain.Favourites
+entity jpa --class ~.domain.Favourites --testAutomatically 
+field number --fieldName identifier --type java.lang.Number --notNull
+hint
+hint fields
+hint relationships
+field reference --fieldName person --class Favourites --type Person --notNull 
+field reference --fieldName book --class Favourites --type Book --notNull 
+hint tests
+hint test
+hint test
+hint
+hint topics
+hint persistence
+jpa setup --database MYSQL --databaseName bbk --provider HIBERNATE 
 perform package
 hint eclipse
-quit
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-26 21:07:51
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-26 21:21:32
 hint
+perform clean
+perform tests
+hint persistence
+jpa setup --database MYSQL --provider HIBERNATE --databaseName bbk
+jpa setup --database MYSQL --provider HIBERNATE --databaseName bb
+jpa setup --database MYSQL --provider HIBERNATE --databaseName bbk
+perform clean
+hint eclipse
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-28 17:25:36
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-28 17:57:52
+hint
+hint eclipse
 perform package
 hint
-// [failed] test integration --entity
-// [failed] test integration --entity Person
-test integration --entity ~.domain.Person
-test integration --entity ~.domain.Person
-test integration --entity ~.domain.BookFaceUser
-test integration --entity ~.domain.BookFaceUser
+hint web mvc
+hint test
+hint topics
+hint persistence
+hint general
+perform tests
+perform clean
+// [failed] test integration --entity ~.Book
 test integration --entity ~.domain.Book
 test integration --entity ~.domain.Book
-// [failed] test integration --entity ~.domain.Favourite
-test integration --entity ~.domain.Favourites
-test integration --entity ~.domain.Favourites
-test integration --entity ~.domain.Comments
-test integration --entity ~.domain.Comments
-hint
-quit
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-26 21:33:10
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-26 21:33:49
-perform tests
-jpa setup --database MYSQL --provider HIBERNATE 
-hint
-perform tests
-test integration --entity ~.domain.Person
-// [failed] test integration --entity ~.domain.FacebookPerson
-// [failed] test integration --entity ~.domain.BookFacePerson
-// [failed] test integration --entity ~.domain.BookFacePerson
-// [failed] test integration
-// [failed] test integration
-// [failed] test integration --entity ~.domain.BookFacePerson
-// [failed] test integration --entity ~.domain.BookFacePerson
 test integration --entity ~.domain.Author
-test integration
+test integration --entity ~.domain.Author
+hint test
+hint test integration
+hint integration
 hint
-perform package
-quit
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-26 22:54:13
+test mock
+test mock --entity Book
+test mock --entity Book
+test mock --entity Comments
+test mock --entity Person
+test mock --entity Favourites
