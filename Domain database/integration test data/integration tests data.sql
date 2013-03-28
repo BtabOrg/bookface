@@ -1,0 +1,117 @@
+USE `bbk`;
+
+INSERT INTO `person` (`version`, `identifier`, `screen_name`, `email_address`, `Password`) VALUES (NULL, NULL, "Sophie McKenzie", "bernard@btab.org", "password");
+INSERT INTO `user` (`version`, `identifier`, `person`) VALUES (NULL, LAST_INSERT_ID(), LAST_INSERT_ID());
+
+INSERT INTO `person` (`version`, `identifier`, `screen_name`, `email_address`, `Password`) VALUES (NULL, NULL, "Michael Brooks", "bernard@btab.org", "password");
+INSERT INTO `user` (`version`, `identifier`, `person`) VALUES (NULL, LAST_INSERT_ID(), LAST_INSERT_ID());
+
+INSERT INTO `person` (`version`, `identifier`, `screen_name`, `email_address`, `Password`) VALUES (NULL, NULL, "Charlie Fletcher", "bernard@btab.org", "password");
+INSERT INTO `user` (`version`, `identifier`, `person`) VALUES (NULL, LAST_INSERT_ID(), LAST_INSERT_ID());
+
+/*
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 0, "Scott Westerfeld");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 1, "Robert Westall");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 2, "Michelle Harrison");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 3, "Anne Cassidy");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 4, "Suzanne Collins");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 5, "Malorie Blackman");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 6, "Donna Tartt");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 7, "Rosamund Lupton");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 8, "Daphne du Maurier");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 9, "Gillian Flynn");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 10, "Ronald Mallett");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 11, "Kip Thorne");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 12, "Philippa Pearce");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 13, "Douglas Adams");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 14, "Alan Lightman");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 15, "HG Wells");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 16, "J Richard Gott");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 17, "HG Wells");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 18, "Mark Twain");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 19, "Hergé");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 20, "Robert Louis Stevenson");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 21, "Rudyard Kipling");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 22, "Rudyard Kipling");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 23, "TH White");
+INSERT INTO `author` (`version`, `identifier`, `name`) VALUES (NULL, 24, "JRR Tolkien");
+
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 0, "Uglies", 0);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 1, "The Kingdom by the Sea", 1);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 2, "Unrest", 2);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 3, "Dead Time", 3);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 4, "The Hunger Games", 4);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 5, "Noughts and Crosses", 5);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 6, "The Secret History", 6);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 7, "Sister", 7);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 8, "Rebecca", 8);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 9, "Gone Girl", 9);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 10, "Time Traveler: A Scientist's Personal Mission to Make Time Travel a Reality", 10);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 11, "Black Holes and Time Warps: Einstein's Outrageous Legacy", 11);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 12, "Tom's Midnight Garden", 12);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 13, "The Restaurant at the End of the Universe", 13);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 14, "Einstein's Dreams", 14);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 15, "The Time Machine", 15);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 16, "Time Travel in Einstein's Universe", 16);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 17, "The Chronic Argonauts", 17);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 18, "A Connecticut Yankee in King Arthur's Court", 18);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 19, "The Secret of the Unicorn and Red Rackham's Treasure", 19);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 20, "Treasure Island and Kidnapped", 20);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 21, "Kim", 21);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 22, "Puck of Pook's Hill and Rewards and Fairies", 22);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 23, "The Sword in the Stone", 23);
+INSERT INTO `book` (`version`, `identifier`, `title`, `author`) VALUES (NULL, 24, "The Lord of the Rings", 24);
+
+
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 0, NULL, 0, 0);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 1, "In complete contrast, The Kingdom by the Sea is set in a very real world, albeit now a historical one. Harry lives in the North East of England during the second world war. As the story starts, the air raid siren is sounding and, by the end of the first chapter Harry has lost everything – his home, his family, even his rabbits. I have rarely read a more compelling opening to a novel but the brilliance of this book is really in the way Harry learns to fend for himself, growing up while trying to find food and shelter on a daily basis. There's a perfect balance in the story between exciting action, when Harry faces terrible dangers, and the periods in between, where we are shown his thoughts and feelings about his situation. My biggest gripe about modern thrillers is that they all too often end poorly, either in an over-blown, action-heavy bang or with an unsatisfying whimper. The Kingdom by the Sea has a great ending, which manages to be entirely convincing yet - to me, at least – completely unexpected.", 0, 1);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 2, "This mysterious tale is both a romance and a ghost story but, for me, it also counts as a paranormal thriller because it's a page-turner with a really strong and exciting story. After a brush with death Elliott finds himself seeing ghosts and enduring horrific out-of-body experiences that leave him terrified. Desperate to understand what is happening to him, he goes to work at a supposedly haunted museum where he meets the intriguing Ophelia – and finds himself in real danger. The plot is full of twists and turns and the characters, especially Elliott and Ophelia, are truly compelling.", 0, 2);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 3, "The first book in Anne Cassidy's new series – The Murder Notebooks – tells the story of Rose and Joshua. One night her mother and his father went out for a meal and never returned. While Joshua is trying to find out what happened to them, Rose is trying to cope with having just witnessed a brutal murder. Dead Time is genuinely suspenseful and the ending left me eager to read the next book in the series.", 0, 3);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 4, "I was fascinated to read that Suzanne Collins came up with the idea for The Hunger Games series when she was flicking between TV channels – one showing war footage and the other a reality TV talent contest. The Hunger Games has a fantastic premise, brilliantly realised, as teenagers fight each other to the death on live TV. The first chapter of the first book is an absolute masterclass in creating the world of the story (vital and particularly challenging when you're setting your story in a fantasy future), establishing the main character and her core relationships and – most importantly – setting out a massive challenge for that character and making the reader care about her achieving it.", 0, 4);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 5, "Tightly plotted, this story is a highly original twist on the classic tale of Romeo and Juliet. I found the structure of the book fascinating and used it as a model for my own book: Blood Ties. When I started visiting schools on author visits, Noughts and Crosses was one of those books every 12-year-old girl seemed to have read!", 0, 5);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 6, "This is one of my favourite books. It follows the young life of scholarship student Richard who travels across America to attend an exclusive college on the East Coast and finds himself drawn to the other students in his ancient Greek class. As the story unfolds, Richard discovers the others are keeping a truly terrible secret. Suspense, tension and the darkest of cover ups keep the novel dramatic and pacy from start to finish. I have come back to The Secret History over and over again – it's fresh, powerful and compelling every time.", 0, 6);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 7, "A sibling relationship is at the heart of this dark, psychological thriller in which older sister Beatrice searches for her missing younger sister. As the story progresses, Beatrice - shocked by what she finds out about Tess's life - refuses to accept that her sister is gone. This is really powerful storytelling with an amazing twist at the end that I didn't see coming.", 0, 7);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 8, "I first read Rebecca years ago, when I was much the same age as its young, unnamed, narrator. The book is a great psychological drama, telling the story of a newly married innocent forced to live in the long shadow cast by her husband's first wife. Re-reading Rebecca recently I was struck by how the heroine's biggest handicap is her own lack of self-confidence and her most sympathetic quality is her own quiet, shy courage.", 0, 8);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 9, "This contemporary psychological thriller is a really cleverly structured story about a man whose wife disappears on their fifth wedding anniversary. With more twists than a corkscrew, Gone Girl manages to work on two levels: as a fast-paced ride and as a dissection of a marriage in trouble. I loved the way my perceptions of the characters shifted depending on whether Nick or Amy was telling the story.", 0, 9);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 10, "When Ronald Mallett was just 10 years old, his father died from a heart attack. While grieving, the boy read HG Wells' The Time Machine and decided he would dedicate his life to making time travel possible so that he could go back and warn his father of the impending catastrophe. Young Ronald grew out of poverty to become a professor of physics at Connecticut University and develop his own unique blueprint for a time machine. It's a true story – and Spike Lee has bought the movie rights.", 1, 10);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 11, "In the 1980s, while writing Contact, Carl Sagan needed help with a plot point. He wanted to know how his alien civilisation might feasibly have created a useable time machine. His cosmologist friend Kip Thorne gave him an answer: wormholes, tunnels that connect different areas of space and time. A few years after Sagan's book came out, Thorne published a scientific paper on the idea and started working on this book. Innumerable wannabe time travellers have lost hours in these pages while mind-travelling through the universe.", 1, 11);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 12, "Philippa Pearce has no black holes or wormholes – she simply dreams up a grandfather clock that strikes 13 and opens a portal to the 19th century. None are so willing to suspend disbelief as readers under a certain age, but the book remains just as engrossing for adults.", 1, 12);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 13, "In 1980, Adams wrote about a computer that could point you to the nearest restaurant. We're halfway to Adams's vision already – all we need is for Google to offer locations in time as well as space. The Restaurant at the End of the Universe is brilliantly conceived, and its take on the farce of human existence seems to become more relevant with every passing news cycle.", 1, 13);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 14, "Lightman is a physicist who can write fiction and non-fiction while pursuing his own research. Only some of the stories in this collection are explicitly about time travel, but it is a theme that hovers over the book. The concept is entirely fresh, the prose is beautifully evocative, the ideas profound and resonant; the stories bear repeated reading. Einstein would have loved this book.", 1, 14);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 15, "The first time I watched Back to the Future with my 10-year-old son, I got some sense of how absorbed The Time Machine's first readers must have been: goggle-eyed, brain working overtime, questions tumbling from their mouths. We are almost too familiar with time travel these days; if I had a time machine, I'd like to go back to talk to those first readers and recalibrate my sense of wonder.", 1, 15);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 16, "In 1991, Gott joined the select group of people that have come up with a way to make a time machine. It involves using highly accelerated subatomic particles to bend the fabric of the universe and thus create loops in time. Or, possibly, a black hole. Those worried by the prospect of Geneva's Large Hadron Collider destroying the planet might find comfort in the idea that it could also make time travel possible.", 1, 16);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 17, "Yes, Wells again. This one's a novella published in 1888 – seven years before the Time Machine. It's wonderful: a murder mystery, an exploration of mob mentality in a small village, a mind-bending introduction to time travel, and gripping to the end.", 1, 17);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 18, "Laugh-out-loud funny one moment, astute social commentary the next. Twain's protagonist takes advantage of his knowledge to set up the infrastructure of a civilised society. The book is a thinly-disguised celebration of what Twain valued most about 19th-century American life: religious tolerance, egalitarianism, education for all, scientific thinking, human dignity and manufacturing industry. It would be interesting to bring Twain to our times and ask whether he thinks America has stayed true to its origins or become a new version of medieval Britain.", 1, 18);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 19, "The adventures of Tintin were my gateway drug to the deeper addiction to all books and stories that came after. They also gave me a love of visual storytelling in general and clean-lined illustration in particular. The physical comedy – usually involving Captain Haddock or Cuthbert Calculus – is superb and something the written word alone could not convey. And, of course, they introduced me to pirates...", 2, 19);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 20, "...speaking of whom: Long John Silver. Stevenson (who after all wrote that great novel about split personality, Dr Jekyll and Mr Hyde) is really good at balancing light and shade in his characters, making them three dimensional and real. Both books are rattling good adventures, full of jeopardy and betrayals. In Treasure Island, Silver is a villain who's almost a hero, and in Kidnapped, the swordsman Alan Breck Stewart is a hero who's pretty close to a villain, if not an actual murderer. And when I finished my first book, Stoneheart, I realised the character of the Gunner has a lot of Alan Breck's DNA in him...", 2, 20);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 21, "This book took me to India for the first time without leaving the comfort of my chair. I was immediately hooked by the teeming world of the Grand Trunk Road, the bazaars, the busy cantonments and towns and the remote hill stations. More than that I was entranced by Kimball O'Hara, the worldly street urchin who has a foot on both sides of the racial divide of colonial India and slips from one to the other like quicksilver, but not, in the end, without cost. It's an exciting story of espionage and skullduggery, but more than that it's a story about identity and choice. Kim's liking for intrigue and adventure is tempered by his love for the Llama he serves, and in the end he ... well, read the book.", 2, 21);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 22, "These two books are history and fantasy told in a series of linked short stories: Puck, \"the oldest Old Thing in England\", appears to two children and magics characters from the past to bring history alive by showing it from an eyewitness's point of view. These books gave me a sense of how the past is always present in a landscape, just waiting to be tapped into. (Bonus features: really great poems between the chapters, including If ... and Cold Iron.)", 2, 22);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 23, "The early part of King Arthur's life told in a whimsical fashion and set in a quirky vision of Merrie Englande that's underpinned by a deep understanding of medieval history. The boy Wart is befriended and tutored by Merlin, who is – eccentrically – living backwards in time. Merlin uses magic to shapeshift the boy into various creatures, allowing him to learn as he experiences the adventures that follow. In fact eccentricity is the seductive hallmark of the whole book, and though you come for the story and the magic, you find – as with the previous two books – that you've stayed for the history.", 2, 23);
+INSERT INTO `comments` (`version`, `identifier`, `description`, `user`, `book`) VALUES (NULL, 24, "Orcs. Sorcerers. Dwarves. Elves. Hobbits. Daring, cowardice, self-sacrifice, swordplay, unlikely friendships and ultimate heroism. What's not to like? Just as the previous three books rest on a strong footing of real history, the Tolkien world works because it sits on a firm foundation of Old English and Norse mythology. Some "high fantasy" novels stumble because the worlds don't make sense and the names of the characters get wildly out of control. Not so with Tolkien: not just a great adventure saga, LOTR has a proper substructure which makes it a dynamic and engaging retelling of the old stories.", 2, 24);
+
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 0, 0, 0);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 1, 0, 1);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 2, 0, 2);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 3, 0, 3);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 4, 0, 4);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 5, 1, 10);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 6, 1, 11);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 7, 1, 12);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 8, 1, 13);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 9, 1, 14);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 10, 2, 19);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 11, 2, 20);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 12, 2, 21);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 13, 0, 10);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 14, 0, 11);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 15, 0, 19);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 16, 0, 20);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 17, 1, 0);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 18, 1, 1);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 19, 1, 19);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 20, 1, 20);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 21, 2, 0);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 22, 2, 1);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 23, 2, 10);
+INSERT INTO `favourites` (`version`, `identifier`, `favourite_user`, `favourite_book`) VALUES (NULL, 24, 2, 11);
+*/
