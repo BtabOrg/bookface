@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="commentses/list">
+        <put-attribute name="body" value="/WEB-INF/views/commentses/list.jspx"/>
+    </definition>
+<definition extends="default" name="commentses/show">
+        <put-attribute name="body" value="/WEB-INF/views/commentses/show.jspx"/>
+    </definition>
+<definition extends="default" name="commentses/create">
+        <put-attribute name="body" value="/WEB-INF/views/commentses/create.jspx"/>
+    </definition>
+<definition extends="default" name="commentses/update">
+        <put-attribute name="body" value="/WEB-INF/views/commentses/update.jspx"/>
+    </definition>
+</tiles-definitions>
