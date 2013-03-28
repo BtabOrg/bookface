@@ -112,3 +112,10 @@ test mock --entity Book
 test mock --entity Comments
 test mock --entity Person
 test mock --entity Favourites
+hint web mvc
+web mvc setup
+web mvc all --package ~.web
+perform clean
+hint
+perform package
+perform eclipse
