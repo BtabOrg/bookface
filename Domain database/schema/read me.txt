@@ -1,7 +1,0 @@
-The domain database schema.
-
-This schema was derived from the product description.
-
-This SQL script can be used to create the physical database.
-
-This script creates the database, with constraints and does not insert any records into the database.

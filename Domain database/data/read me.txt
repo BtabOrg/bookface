@@ -1,1 +1,0 @@
-This is a copy of the physical database files which contain the different tables, constraints and database records (which by default there are no database records within the database).
