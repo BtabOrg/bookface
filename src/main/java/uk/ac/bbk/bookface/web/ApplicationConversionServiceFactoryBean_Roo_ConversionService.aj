@@ -20,7 +20,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Author, String> ApplicationConversionServiceFactoryBean.getAuthorToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<uk.ac.bbk.bookface.domain.Author, java.lang.String>() {
             public String convert(Author author) {
-                return "(no displayable fields)";
+                return new StringBuilder().append(author.getName()).toString();
             }
         };
     }
@@ -44,7 +44,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Book, String> ApplicationConversionServiceFactoryBean.getBookToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<uk.ac.bbk.bookface.domain.Book, java.lang.String>() {
             public String convert(Book book) {
-                return "(no displayable fields)";
+                return new StringBuilder().append(book.getTitle()).toString();
             }
         };
     }
@@ -68,7 +68,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Comments, String> ApplicationConversionServiceFactoryBean.getCommentsToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<uk.ac.bbk.bookface.domain.Comments, java.lang.String>() {
             public String convert(Comments comments) {
-                return "(no displayable fields)";
+                return new StringBuilder().append(comments.getDescription()).append(' ').append(comments.getPerson()).toString();
             }
         };
     }
@@ -92,7 +92,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Favourites, String> ApplicationConversionServiceFactoryBean.getFavouritesToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<uk.ac.bbk.bookface.domain.Favourites, java.lang.String>() {
             public String convert(Favourites favourites) {
-                return "(no displayable fields)";
+                return new StringBuilder().append(favourites.getPerson()).append(' ').append(favourites.getBook()).toString();
             }
         };
     }
@@ -116,7 +116,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Person, String> ApplicationConversionServiceFactoryBean.getPersonToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<uk.ac.bbk.bookface.domain.Person, java.lang.String>() {
             public String convert(Person person) {
-                return "(no displayable fields)";
+                return new StringBuilder().append(person.getScreenName()).append(' ').append(person.getEmailAddress()).toString();
             }
         };
     }

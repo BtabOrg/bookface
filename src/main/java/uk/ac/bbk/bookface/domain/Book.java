@@ -1,6 +1,8 @@
 package uk.ac.bbk.bookface.domain;
 
 import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -14,10 +16,11 @@ public class Book {
 
     @NotNull
     @Column(name = "title")
-    @Size(max = 255)
+    @Size(min = 2, max = 255)
     private String title;
 
     @NotNull
-    @Column(name = "author")
-    private Integer author;
+    @OneToOne
+    @JoinColumn(name = "id", referencedColumnName = "name")
+    private Author author;
 }

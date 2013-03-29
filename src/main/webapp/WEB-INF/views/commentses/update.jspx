@@ -4,7 +4,7 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_uk_ac_bbk_bookface_domain_Comments" modelAttribute="comments" path="/commentses" versionField="Version" z="MM8nFntvtUqK00e4yrXXv74NSBI=">
         <field:input field="description" id="c_uk_ac_bbk_bookface_domain_Comments_description" min="2" required="true" z="88uwX/t1ESjOqk/Yy3uWl6KW6Ts="/>
-        <field:input field="person" id="c_uk_ac_bbk_bookface_domain_Comments_person" validationMessageCode="field_invalid_integer" z="ZBKR0EHnBYcwn2h8fq5OHcFr+Pg="/>
-        <field:input field="book" id="c_uk_ac_bbk_bookface_domain_Comments_book" validationMessageCode="field_invalid_integer" z="iXYnliz1MMPgXW2vbg7l0SioEFg="/>
+        <field:select field="book" id="c_uk_ac_bbk_bookface_domain_Comments_book" itemValue="id" items="${books}" path="/books" required="true" z="XaqD0IARc0x18yQ6R3ke1OF1UFw="/>
+        <field:input field="person" id="c_uk_ac_bbk_bookface_domain_Comments_person" required="true" validationMessageCode="field_invalid_integer" z="oCjg5QmCvYhLY3fPv9vLsInyvzs="/>
     </form:update>
 </div>

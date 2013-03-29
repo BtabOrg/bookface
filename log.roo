@@ -98,3 +98,25 @@ perform package
 perform eclipse
 exit
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-29 18:16:20
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-29 19:09:37
+backup
+perform package
+entity jpa --class Book
+field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --class Book --comment "The author of the book."
+perform package
+entity jpa --class ~.domain.Book
+field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --class ~.domain.Book --comment "The author of the book." --notNull
+field string --fieldName title --class ~.domain.Book --column title --comment "The title of the book." --notNull --sizeMax 255 --sizeMin 2
+web mvc all --package ~.web
+// [failed] field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --class ~.domain.Book --comment "The author of the book." --notNull --referencedColumnName --
+field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --class ~.domain.Book --comment "The author of the book." --notNull --referencedColumnName
+// [failed] field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --class ~.domain.Book --comment "The author of the book." --notNull --referencedColumnName name
+field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --class ~.domain.Book --comment "The author of the book." --notNull --referencedColumnName name --joinColumnName id
+entity jpa --class ~.domain.Comments
+field string --fieldName description --class ~.domain.Comments --column description --comment "The comment on the book." --notNull --sizeMin 2
+field reference --fieldName book --type ~.domain.Book --cardinality ONE_TO_ONE --class ~.domain.Comments --comment "The book." --notNull --referencedColumnName title --joinColumnName id
+field number --fieldName person --type java.lang.Integer --class Comments --column person --comment "The person." --notNull --value 0
+perform clean
+backup
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-29 20:48:27
