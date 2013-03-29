@@ -2,9 +2,8 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_ac_uk_bbk_bookface_domain_Favourites" modelAttribute="favourites" path="/favouriteses" versionField="Version" z="HmlZ3pyAPv9Ufy5CUPColqVKs5I=">
-        <field:input field="identifier" id="c_ac_uk_bbk_bookface_domain_Favourites_identifier" required="true" z="heSTiPH+XFjIisbYwAefWEoc1rQ="/>
-        <field:select field="person" id="c_ac_uk_bbk_bookface_domain_Favourites_person" itemValue="id" items="${people}" path="/people" required="true" z="1to/AmWd+D1IWEK41ctnlkyhAmY="/>
-        <field:select field="book" id="c_ac_uk_bbk_bookface_domain_Favourites_book" itemValue="id" items="${books}" path="/books" required="true" z="xrEAn+4Ya9PprY/nEhQICHUhKPQ="/>
+    <form:update id="fu_uk_ac_bbk_bookface_domain_Favourites" modelAttribute="favourites" path="/favouriteses" versionField="Version" z="tShmCerfSqrTYs5fcJaB9sqTCr8=">
+        <field:input field="person" id="c_uk_ac_bbk_bookface_domain_Favourites_person" required="true" validationMessageCode="field_invalid_integer" z="WXJ0gjL58g/9IKUvhimsHjcAZf8="/>
+        <field:input field="book" id="c_uk_ac_bbk_bookface_domain_Favourites_book" required="true" validationMessageCode="field_invalid_integer" z="g8SRljzno7gIrNMbZrQZQxaJaQM="/>
     </form:update>
 </div>

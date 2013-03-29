@@ -6,123 +6,94 @@ CREATE SCHEMA IF NOT EXISTS `bookface` DEFAULT CHARACTER SET utf8 COLLATE utf8_g
 USE `bookface` ;
 
 -- -----------------------------------------------------
--- Table `bookface`.`Person`
+-- Table `bookface`.`person`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bookface`.`Person` ;
-
-CREATE  TABLE IF NOT EXISTS `bookface`.`Person` (
-  `Version` BIGINT NOT NULL ,
-  `Identifier` BIGINT NOT NULL AUTO_INCREMENT ,
-  `Screen_name` VARCHAR(255) NOT NULL ,
-  `Email_address` VARCHAR(255) NOT NULL ,
-  `Password` VARCHAR(255) NOT NULL ,
-  PRIMARY KEY (`Identifier`) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `bookface`.`User`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `bookface`.`User` ;
-
-CREATE  TABLE IF NOT EXISTS `bookface`.`User` (
-  `Version` BIGINT NOT NULL ,
-  `Identifier` BIGINT NOT NULL AUTO_INCREMENT ,
-  `Person.Identifier` BIGINT NOT NULL ,
-  PRIMARY KEY (`Identifier`) ,
-  INDEX `user_person` (`Person.Identifier` ASC) ,
-  CONSTRAINT `Person.Identifier`
-    FOREIGN KEY (`Person.Identifier` )
-    REFERENCES `bookface`.`Person` (`Identifier` )
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `bookface`.`Author`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `bookface`.`Author` ;
-
-CREATE  TABLE IF NOT EXISTS `bookface`.`Author` (
-  `Version` BIGINT NOT NULL ,
-  `Identifier` BIGINT NOT NULL AUTO_INCREMENT ,
-  `Name` VARCHAR(255) NOT NULL ,
-  PRIMARY KEY (`Identifier`) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `bookface`.`Book`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `bookface`.`Book` ;
-
-CREATE  TABLE IF NOT EXISTS `bookface`.`Book` (
-  `Version` BIGINT NOT NULL ,
-  `Identifier` BIGINT NOT NULL AUTO_INCREMENT ,
-  `Title` VARCHAR(255) NOT NULL ,
-  `Author.Identifier` BIGINT NOT NULL ,
-  PRIMARY KEY (`Identifier`) ,
-  INDEX `book_author` (`Author.Identifier` ASC) ,
-  CONSTRAINT `Author.Identifier`
-    FOREIGN KEY (`Author.Identifier` )
-    REFERENCES `bookface`.`Author` (`Identifier` )
-    ON DELETE NO ACTION
-    ON UPDATE CASCADE)
+CREATE  TABLE IF NOT EXISTS `bookface`.`person` (
+  `version` BIGINT NULL ,
+  `id` BIGINT NOT NULL AUTO_INCREMENT ,
+  `screen_name` VARCHAR(255) NOT NULL ,
+  `email_address` VARCHAR(255) NOT NULL ,
+  PRIMARY KEY (`id`) )
 ENGINE = InnoDB
 COMMENT = '	';
 
 
 -- -----------------------------------------------------
--- Table `bookface`.`Comments`
+-- Table `bookface`.`author`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bookface`.`Comments` ;
-
-CREATE  TABLE IF NOT EXISTS `bookface`.`Comments` (
-  `Version` BIGINT NOT NULL ,
-  `Identifier` BIGINT NOT NULL AUTO_INCREMENT ,
-  `Description` TINYTEXT NOT NULL ,
-  `User.Identifier` BIGINT NOT NULL ,
-  `Book.Identifier` BIGINT NOT NULL ,
-  PRIMARY KEY (`Identifier`) ,
-  INDEX `comment_user` (`User.Identifier` ASC) ,
-  INDEX `comment_book` (`Book.Identifier` ASC) ,
-  CONSTRAINT `User.Identifier`
-    FOREIGN KEY (`User.Identifier` )
-    REFERENCES `bookface`.`User` (`Identifier` )
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `Book.Identifier`
-    FOREIGN KEY (`Book.Identifier` )
-    REFERENCES `bookface`.`Book` (`Identifier` )
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
+CREATE  TABLE IF NOT EXISTS `bookface`.`author` (
+  `version` BIGINT NULL ,
+  `id` BIGINT NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(255) NOT NULL ,
+  PRIMARY KEY (`id`) )
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bookface`.`Favourites`
+-- Table `bookface`.`book`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bookface`.`Favourites` ;
+CREATE  TABLE IF NOT EXISTS `bookface`.`book` (
+  `version` BIGINT NULL ,
+  `id` BIGINT NOT NULL AUTO_INCREMENT ,
+  `title` VARCHAR(255) NOT NULL ,
+  `author` BIGINT NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `book_author_idx` (`author` ASC) ,
+  CONSTRAINT `book_author`
+    FOREIGN KEY (`author` )
+    REFERENCES `bookface`.`author` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+COMMENT = '	';
 
-CREATE  TABLE IF NOT EXISTS `bookface`.`Favourites` (
-  `Version` BIGINT NOT NULL ,
-  `Identifier` BIGINT NOT NULL AUTO_INCREMENT ,
-  `User.Identifier` BIGINT NOT NULL ,
-  `Book.Identifier` BIGINT NOT NULL ,
-  PRIMARY KEY (`Identifier`) ,
-  INDEX `favourites_user` (`User.Identifier` ASC) ,
-  INDEX `favourites_book` (`Book.Identifier` ASC) ,
-  CONSTRAINT `User`
-    FOREIGN KEY (`User.Identifier` )
-    REFERENCES `bookface`.`User` (`Identifier` )
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `Book`
-    FOREIGN KEY (`Book.Identifier` )
-    REFERENCES `bookface`.`Book` (`Identifier` )
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
+
+-- -----------------------------------------------------
+-- Table `bookface`.`comments`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `bookface`.`comments` (
+  `version` BIGINT NULL ,
+  `id` BIGINT NOT NULL AUTO_INCREMENT ,
+  `description` TEXT NOT NULL ,
+  `person` BIGINT NOT NULL ,
+  `book` BIGINT NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `comments_book_idx` (`book` ASC) ,
+  INDEX `comments_person_idx` (`person` ASC) ,
+  CONSTRAINT `comments_book`
+    FOREIGN KEY (`book` )
+    REFERENCES `bookface`.`book` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `comments_person`
+    FOREIGN KEY (`person` )
+    REFERENCES `bookface`.`person` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bookface`.`favourites`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `bookface`.`favourites` (
+  `version` BIGINT NULL ,
+  `id` BIGINT NOT NULL AUTO_INCREMENT ,
+  `person` BIGINT NOT NULL ,
+  `book` BIGINT NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `favourites_book_idx` (`book` ASC) ,
+  INDEX `favourites_person_idx` (`person` ASC) ,
+  CONSTRAINT `favourites_book`
+    FOREIGN KEY (`book` )
+    REFERENCES `bookface`.`book` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `favourites_person`
+    FOREIGN KEY (`person` )
+    REFERENCES `bookface`.`person` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 USE `bookface` ;
