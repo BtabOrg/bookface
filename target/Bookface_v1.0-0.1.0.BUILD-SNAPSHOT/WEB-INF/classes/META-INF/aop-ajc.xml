@@ -1,0 +1,36 @@
+<aspectj>
+<aspects>
+<aspect name="uk.ac.bbk.bookface.domain.Person_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.Book_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.web.BookController_Roo_Controller"/>
+<aspect name="uk.ac.bbk.bookface.domain.Comments_Roo_JavaBean"/>
+<aspect name="uk.ac.bbk.bookface.domain.Favourites_Roo_JavaBean"/>
+<aspect name="uk.ac.bbk.bookface.domain.Author_Roo_Jpa_Entity"/>
+<aspect name="uk.ac.bbk.bookface.web.AuthorController_Roo_Controller"/>
+<aspect name="uk.ac.bbk.bookface.domain.Author_Roo_Jpa_ActiveRecord"/>
+<aspect name="uk.ac.bbk.bookface.domain.Book_Roo_JavaBean"/>
+<aspect name="uk.ac.bbk.bookface.domain.Favourites_Roo_ToString"/>
+<aspect name="uk.ac.bbk.bookface.domain.Comments_Roo_ToString"/>
+<aspect name="uk.ac.bbk.bookface.domain.Comments_Roo_Jpa_Entity"/>
+<aspect name="uk.ac.bbk.bookface.domain.Book_Roo_Jpa_ActiveRecord"/>
+<aspect name="uk.ac.bbk.bookface.domain.Person_Roo_JavaBean"/>
+<aspect name="uk.ac.bbk.bookface.domain.Book_Roo_Jpa_Entity"/>
+<aspect name="uk.ac.bbk.bookface.web.PersonController_Roo_Controller"/>
+<aspect name="uk.ac.bbk.bookface.web.CommentsController_Roo_Controller"/>
+<aspect name="uk.ac.bbk.bookface.domain.Person_Roo_ToString"/>
+<aspect name="uk.ac.bbk.bookface.web.FavouritesController_Roo_Controller"/>
+<aspect name="uk.ac.bbk.bookface.domain.Person_Roo_Jpa_ActiveRecord"/>
+<aspect name="uk.ac.bbk.bookface.web.ApplicationConversionServiceFactoryBean_Roo_ConversionService"/>
+<aspect name="uk.ac.bbk.bookface.domain.Comments_Roo_Jpa_ActiveRecord"/>
+<aspect name="uk.ac.bbk.bookface.domain.Person_Roo_Jpa_Entity"/>
+<aspect name="uk.ac.bbk.bookface.domain.Favourites_Roo_Jpa_Entity"/>
+<aspect name="uk.ac.bbk.bookface.domain.Author_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.Favourites_Roo_Jpa_ActiveRecord"/>
+<aspect name="uk.ac.bbk.bookface.domain.Author_Roo_JavaBean"/>
+<aspect name="uk.ac.bbk.bookface.domain.Book_Roo_ToString"/>
+<aspect name="uk.ac.bbk.bookface.domain.Author_Roo_ToString"/>
+<aspect name="uk.ac.bbk.bookface.domain.Comments_Roo_Configurable"/>
+<aspect name="uk.ac.bbk.bookface.domain.Favourites_Roo_Configurable"/>
+</aspects>
+</aspectj>
+

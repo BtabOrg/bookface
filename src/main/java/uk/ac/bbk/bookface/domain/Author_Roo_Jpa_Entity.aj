@@ -8,12 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Version;
 import uk.ac.bbk.bookface.domain.Author;
 
 privileged aspect Author_Roo_Jpa_Entity {
     
     declare @type: Author: @Entity;
+    
+    declare @type: Author: @Table(name = "author");
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

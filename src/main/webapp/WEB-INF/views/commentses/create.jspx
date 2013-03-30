@@ -4,8 +4,8 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_uk_ac_bbk_bookface_domain_Comments" modelAttribute="comments" path="/commentses" render="${empty dependencies}" z="aj4eLvbuqXGUeUZxW4AZ4K9q/WU=">
         <field:input field="description" id="c_uk_ac_bbk_bookface_domain_Comments_description" min="2" required="true" z="88uwX/t1ESjOqk/Yy3uWl6KW6Ts="/>
-        <field:select field="book" id="c_uk_ac_bbk_bookface_domain_Comments_book" itemValue="id" items="${books}" path="/books" required="true" z="XaqD0IARc0x18yQ6R3ke1OF1UFw="/>
         <field:input field="person" id="c_uk_ac_bbk_bookface_domain_Comments_person" required="true" validationMessageCode="field_invalid_integer" z="oCjg5QmCvYhLY3fPv9vLsInyvzs="/>
+        <field:input field="book" id="c_uk_ac_bbk_bookface_domain_Comments_book" required="true" validationMessageCode="field_invalid_integer" z="TQlBnWVesUI1yC193ZPPT42C5Hg="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_uk_ac_bbk_bookface_domain_Comments" render="${not empty dependencies}" z="HecE0PXrkZdGkWit4jJwL8+VeVo="/>
 </div>

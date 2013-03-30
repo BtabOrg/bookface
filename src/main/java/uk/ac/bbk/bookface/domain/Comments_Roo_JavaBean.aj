@@ -3,7 +3,6 @@
 
 package uk.ac.bbk.bookface.domain;
 
-import uk.ac.bbk.bookface.domain.Book;
 import uk.ac.bbk.bookface.domain.Comments;
 
 privileged aspect Comments_Roo_JavaBean {
@@ -16,20 +15,20 @@ privileged aspect Comments_Roo_JavaBean {
         this.description = description;
     }
     
-    public Book Comments.getBook() {
-        return this.book;
-    }
-    
-    public void Comments.setBook(Book book) {
-        this.book = book;
-    }
-    
     public Integer Comments.getPerson() {
         return this.person;
     }
     
     public void Comments.setPerson(Integer person) {
         this.person = person;
+    }
+    
+    public Integer Comments.getBook() {
+        return this.book;
+    }
+    
+    public void Comments.setBook(Integer book) {
+        this.book = book;
     }
     
 }

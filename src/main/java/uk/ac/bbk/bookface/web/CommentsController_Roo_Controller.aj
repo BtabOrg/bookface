@@ -4,8 +4,6 @@
 package uk.ac.bbk.bookface.web;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
-import uk.ac.bbk.bookface.domain.Book;
 import uk.ac.bbk.bookface.domain.Comments;
 import uk.ac.bbk.bookface.web.CommentsController;
 
@@ -36,11 +33,6 @@ privileged aspect CommentsController_Roo_Controller {
     @RequestMapping(params = "form", produces = "text/html")
     public String CommentsController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Comments());
-        List<String[]> dependencies = new ArrayList<String[]>();
-        if (Book.countBooks() == 0) {
-            dependencies.add(new String[] { "book", "books" });
-        }
-        uiModel.addAttribute("dependencies", dependencies);
         return "commentses/create";
     }
     
@@ -94,7 +86,6 @@ privileged aspect CommentsController_Roo_Controller {
     
     void CommentsController.populateEditForm(Model uiModel, Comments comments) {
         uiModel.addAttribute("comments", comments);
-        uiModel.addAttribute("books", Book.findAllBooks());
     }
     
     String CommentsController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

@@ -8,12 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Version;
 import uk.ac.bbk.bookface.domain.Book;
 
 privileged aspect Book_Roo_Jpa_Entity {
     
     declare @type: Book: @Entity;
+    
+    declare @type: Book: @Table(name = "book");
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

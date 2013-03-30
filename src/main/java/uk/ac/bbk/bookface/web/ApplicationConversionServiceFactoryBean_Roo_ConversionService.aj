@@ -44,7 +44,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Book, String> ApplicationConversionServiceFactoryBean.getBookToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<uk.ac.bbk.bookface.domain.Book, java.lang.String>() {
             public String convert(Book book) {
-                return new StringBuilder().append(book.getTitle()).toString();
+                return new StringBuilder().append(book.getTitle()).append(' ').append(book.getAuthor()).toString();
             }
         };
     }
@@ -68,7 +68,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Comments, String> ApplicationConversionServiceFactoryBean.getCommentsToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<uk.ac.bbk.bookface.domain.Comments, java.lang.String>() {
             public String convert(Comments comments) {
-                return new StringBuilder().append(comments.getDescription()).append(' ').append(comments.getPerson()).toString();
+                return new StringBuilder().append(comments.getDescription()).append(' ').append(comments.getPerson()).append(' ').append(comments.getBook()).toString();
             }
         };
     }

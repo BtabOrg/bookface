@@ -8,12 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Version;
 import uk.ac.bbk.bookface.domain.Comments;
 
 privileged aspect Comments_Roo_Jpa_Entity {
     
     declare @type: Comments: @Entity;
+    
+    declare @type: Comments: @Table(name = "comments");
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

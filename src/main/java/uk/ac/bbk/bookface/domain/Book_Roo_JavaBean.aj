@@ -3,7 +3,6 @@
 
 package uk.ac.bbk.bookface.domain;
 
-import uk.ac.bbk.bookface.domain.Author;
 import uk.ac.bbk.bookface.domain.Book;
 
 privileged aspect Book_Roo_JavaBean {
@@ -16,11 +15,11 @@ privileged aspect Book_Roo_JavaBean {
         this.title = title;
     }
     
-    public Author Book.getAuthor() {
+    public Integer Book.getAuthor() {
         return this.author;
     }
     
-    public void Book.setAuthor(Author author) {
+    public void Book.setAuthor(Integer author) {
         this.author = author;
     }
     

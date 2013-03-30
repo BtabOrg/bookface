@@ -1,122 +1,34 @@
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-29 16:17:17
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-30 13:16:36
+// [failed] project --topLevelPackage uk.ac.bbk.bookface --projectName "Bookface web application"
+project --topLevelPackage uk.ac.bbk.bookface --projectName "Bookface_v1.0"
 hint
-project --topLevelPackage uk.ac.bbk.bookface
-jpa setup --database MYSQL --provider HIBERNATE --databaseName bbk --hostName 127.0.0.1 --userName root
+jpa setup --database MYSQL --provider HIBERNATE --databaseName bookface --hostName 127.0.0.1 --userName root
 hint
-entity jpa --class ~.domain.Author
-entity jpa --class ~.domain.Book
-entity jpa --class ~.domain.Favourites
-entity jpa --class ~.domain.Comments
-entity jpa --class ~.domain.Person
-hint
-field string --fieldName name --class Author --column name --notNull --sizeMax 255 --sizeMin 2 --comment "The name of the author."
-field string --fieldName title --class Book --column title --notNull --sizeMax 255 --sizeMin 2 --comment "The title of the book."
-field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --joinColumnName 
-// [failed] field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --notNull --comment "The author of the book."
-entity jpa --class ~.domain.Book
-field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --notNull --comment "The author of the book."
-field string --fieldName title --class Book --column title --notNull --sizeMax 255 --sizeMin 2 --comment "The title of the book."
-field string --fieldName screenName --class Book --column screen_name --notNull --sizeMax 255 --sizeMin 2 --comment "The screen name of a person."
-entity jpa --class ~.domain.Book
-field string --fieldName title --class Book --column title --notNull --sizeMax 255 --sizeMin 2 --comment "The title of the book."
-field reference --fieldName author --type ~.domain.Author --class Book --cardinality ONE_TO_ONE --comment "The author of the book."
-entity jpa --class ~.domain.Favourites
-field reference --fieldName person --type ~.domain.Person --class Favourites --cardinality ONE_TO_ONE --comment "The person."
-field reference --fieldName book --type ~.domain.Book --class Favourites --cardinality ONE_TO_ONE --comment "The book."
-entity jpa --class ~.domain.Comments
-field string --fieldName description --class Comments --column description --notNull --sizeMax 255 --sizeMin 2 --comment "The comment description."
-field reference --fieldName person --type ~.domain.Person --cardinality ONE_TO_ONE --class ~.domain.Comments --notNull --comment "The person who made the comment."
-field reference --fieldName book --type ~.domain.Book --cardinality ONE_TO_ONE --class ~.domain.Book --notNull --comment "The book commented on."
-entity jpa --class ~.domain.Person
-field string --fieldName screenName --class ~.domain.Person --column screen_name --notNull --sizeMin 2 --sizeMax 255 --comment "The screen name of the person."
-field string --fieldName emailAddress --class ~.domain.Person --column email_address --notNull --sizeMin 6 --sizeMax 255 --comment "The email address of the person."
+entity jpa --class uk.ac.bbk.bookface.domain.Author --table author
+entity jpa --class uk.ac.bbk.bookface.domain.Book --table book
+entity jpa --class uk.ac.bbk.bookface.domain.Favourites --table favourites
+entity jpa --class uk.ac.bbk.bookface.domain.Comments --table comments
+entity jpa --class uk.ac.bbk.bookface.domain.Person --table person
+field string --fieldName name --class ~.domain.Author --column name --comment "The name of the author." --notNull --sizeMax 255 --sizeMin 2
+field string --fieldName title --class ~.domain.Book --column title --comment "The title of the book." --notNull --sizeMax 255 --sizeMin 2
+field number --fieldName author --type java.lang.Integer --class ~.domain.Book --column author --comment "The author of the book." --notNull
+field string --fieldName description --class ~.domain.Comments --column description --comment "The book comment." --notNull --sizeMin 2
+field number --fieldName person --type java.lang.Integer --class ~.domain.Comments --column person --comment "The person." --notNull 
+field number --fieldName book --type java.lang.Integer --class ~.domain.Comments --column book --comment "The book." --notNull 
+field number --fieldName person --type java.lang.Integer --class ~.domain.Favourites --column person --comment "The person." --notNull
+field number --fieldName book --type java.lang.Integer --class ~.domain.Favourites --column book --comment "The book." --notNull 
+field string --fieldName screenName --class ~.domain.Person --column screen_name --comment "The screen name of the person." --notNull --sizeMax 255 --sizeMin 2
+field string --fieldName emailAddress --class ~.domain.Person --column email_address --comment "The email address of the person." --notNull --sizeMax 255 --sizeMin 6
 hint
 web mvc setup
 web mvc all --package ~.web
-hint
-perform package
-hint
-perform eclipse
-quit
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-29 16:50:30
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-29 17:00:28
-entity jpa --class ~.domain.Book
-field string --fieldName title --class Book --column title --notNull --sizeMin 2 --sizeMax 255 --comment "The title of the book."
-quit
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-29 17:20:43
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-29 17:20:58
-database properties list
-// [failed] database introspect --schema "bbk"
-// [failed] database introspect --schema unable-to-obtain-connection 
-// [failed] database introspect --schema unable-to-obtain-connection --file temp
-// [failed] database introspect --schema unable-to-obtain-connection --file temp.txt
-addon search
-addon search sql
-addon search MySQL
-addon search database
-addon search JDBC
-jpa setup --database MYSQL --provider HIBERNATE --databaseName bbk --hostName 127.0.0.1 --userName root
-// [failed] database introspect --schema bbk --file --enableViews 
-// [failed] database introspect --schema "bbk" --file --enableViews 
-// [failed] database reverse engineer --schema bbk --package ~.domain
-addon list
-addon search 
-addon search d
-addon search da
-addon search test
-addon search schema
-addon search DBRE
-hint
-jpa setup --database MYSQL --provider HIBERNATE --databaseName --hostName 127.0.0.1 --userName
-// [failed] database introspect --schema bbk --file "Domain database\schema.xml"
-jpa setup --database MYSQL --provider HIBERNATE --databaseName --hostName 127.0.0.1 --userName
-entity jpa --class ~.domain.Author
-entity jpa --class ~.domain.Book
-entity jpa --class ~.domain.Favourites
-entity jpa --class ~.domain.Comments
-entity jpa --class ~.domain.Person
-entity jpa --class ~.domain.Author
-field string --fieldName name --column name --comment "The name of the author." --class ~.domain.Author --notNull --sizeMax 255 --sizeMin 2
-field string --fieldName title --class ~.domain.Book --column title --comment "The title of the book." --notNull --sizeMax 255 --sizeMin
-field number --fieldName author --type java.lang.Integer --class ~.domain.Book --column author --comment "The author id." --notNull
-field number --fieldName person --type java.lang.Integer --class Favourites --column person --comment "The person id." --notNull 
-field number --fieldName book --type java.lang.Integer --class Favourites --column book --comment "The book id." --notNull 
-field string --fieldName description --class Comments --column description --comment "The person id." --notNull --sizeMin 2
-field number --fieldName person --type java.lang.Integer --class Comments --column person --comment "The person id."
-field number --fieldName book --type java.lang.Integer --class Comments --column book --comment "The book id."
-field string --fieldName screenName --class Person --column screen_name --comment "The screen name of the person." --notNull --sizeMax 255 --
-// [failed] field string --fieldName screenName --class Person --column screen_name --comment "The screen name of the person." --notNull --sizeMax 255 --sizeMin  2
-entity jpa --class ~.domain.Person
-field string --fieldName screenName --class Person --column screen_name --comment "The screen name of the person." --notNull --sizeMax 255 --sizeMin 2
-field string --fieldName emailAddress --class Person --column email_address --comment "The email address for the person." --notNull --sizeMax 255 --sizeMin 6
-jpa setup --database MYSQL --provider HIBERNATE --databaseName bookface --hostName 127.0.0.1 --userName root
-// [failed] database introspect --schema bookface --file temp.xml
-// [failed] database introspect --schema bookface
-web mvc all --package ~.web
 perform clean
-perform package
 perform eclipse
-exit
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-29 18:16:20
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-29 19:09:37
-backup
 perform package
-entity jpa --class Book
-field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --class Book --comment "The author of the book."
-perform package
-entity jpa --class ~.domain.Book
-field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --class ~.domain.Book --comment "The author of the book." --notNull
-field string --fieldName title --class ~.domain.Book --column title --comment "The title of the book." --notNull --sizeMax 255 --sizeMin 2
-web mvc all --package ~.web
-// [failed] field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --class ~.domain.Book --comment "The author of the book." --notNull --referencedColumnName --
-field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --class ~.domain.Book --comment "The author of the book." --notNull --referencedColumnName
-// [failed] field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --class ~.domain.Book --comment "The author of the book." --notNull --referencedColumnName name
-field reference --fieldName author --type ~.domain.Author --cardinality ONE_TO_ONE --class ~.domain.Book --comment "The author of the book." --notNull --referencedColumnName name --joinColumnName id
-entity jpa --class ~.domain.Comments
-field string --fieldName description --class ~.domain.Comments --column description --comment "The comment on the book." --notNull --sizeMin 2
-field reference --fieldName book --type ~.domain.Book --cardinality ONE_TO_ONE --class ~.domain.Comments --comment "The book." --notNull --referencedColumnName title --joinColumnName id
-field number --fieldName person --type java.lang.Integer --class Comments --column person --comment "The person." --notNull --value 0
-perform clean
-backup
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-30 13:37:45
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-30 13:49:43
+hint
+hint eclipse
 exit
-// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-29 20:48:27
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-30 13:50:26
