@@ -20,4 +20,5 @@ public class Book {
     @NotNull
     @Column(name = "author")
     private Integer author;
+    
 }

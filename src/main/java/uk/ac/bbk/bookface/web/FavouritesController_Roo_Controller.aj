@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
+
+import uk.ac.bbk.bookface.domain.Book;
 import uk.ac.bbk.bookface.domain.Favourites;
 import uk.ac.bbk.bookface.web.FavouritesController;
 
@@ -86,6 +88,7 @@ privileged aspect FavouritesController_Roo_Controller {
     
     void FavouritesController.populateEditForm(Model uiModel, Favourites favourites) {
         uiModel.addAttribute("favourites", favourites);
+        uiModel.addAttribute("books", Book.findAllBooks());
     }
     
     String FavouritesController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

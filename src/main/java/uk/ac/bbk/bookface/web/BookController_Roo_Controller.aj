@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
+
+import uk.ac.bbk.bookface.domain.Author;
 import uk.ac.bbk.bookface.domain.Book;
 import uk.ac.bbk.bookface.web.BookController;
 
@@ -26,6 +28,8 @@ privileged aspect BookController_Roo_Controller {
             return "books/create";
         }
         uiModel.asMap().clear();
+        Long theAuthorsIdentifier = Long.parseLong(httpServletRequest.getParameter("author"));
+        book.setAuthor(Integer.parseInt(theAuthorsIdentifier.toString()));
         book.persist();
         return "redirect:/books/" + encodeUrlPathSegment(book.getId().toString(), httpServletRequest);
     }
@@ -55,6 +59,11 @@ privileged aspect BookController_Roo_Controller {
             uiModel.addAttribute("books", Book.findAllBooks());
         }
         return "books/list";
+        /*
+        Author theAuthor = Author.findAuthor(theAuthorsIdentifier);
+        book.setAuthor(Integer.parseInt(theAuthor.getId().toString()));
+        book.setAuthorsName(theAuthor.getName());
+        */
     }
     
     @RequestMapping(method = RequestMethod.PUT, produces = "text/html")
@@ -64,6 +73,8 @@ privileged aspect BookController_Roo_Controller {
             return "books/update";
         }
         uiModel.asMap().clear();
+        Integer author = Integer.parseInt(httpServletRequest.getParameter("author"));
+        book.setAuthor(author);
         book.merge();
         return "redirect:/books/" + encodeUrlPathSegment(book.getId().toString(), httpServletRequest);
     }
@@ -86,6 +97,7 @@ privileged aspect BookController_Roo_Controller {
     
     void BookController.populateEditForm(Model uiModel, Book book) {
         uiModel.addAttribute("book", book);
+        uiModel.addAttribute("authors", Author.findAllAuthors());        
     }
     
     String BookController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
