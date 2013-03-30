@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
-
-import uk.ac.bbk.bookface.domain.Book;
 import uk.ac.bbk.bookface.domain.Comments;
 import uk.ac.bbk.bookface.web.CommentsController;
 
@@ -88,7 +86,6 @@ privileged aspect CommentsController_Roo_Controller {
     
     void CommentsController.populateEditForm(Model uiModel, Comments comments) {
         uiModel.addAttribute("comments", comments);
-        uiModel.addAttribute("books", Book.findAllBooks());
     }
     
     String CommentsController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

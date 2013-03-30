@@ -22,4 +22,5 @@ privileged aspect Book_Roo_JavaBean {
     public void Book.setAuthor(Integer author) {
         this.author = author;
     }
+    
 }
