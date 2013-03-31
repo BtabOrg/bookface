@@ -1,0 +1,48 @@
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-30 13:16:36
+// [failed] project --topLevelPackage uk.ac.bbk.bookface --projectName "Bookface web application"
+project --topLevelPackage uk.ac.bbk.bookface --projectName "Bookface_v1.0"
+hint
+jpa setup --database MYSQL --provider HIBERNATE --databaseName bookface --hostName 127.0.0.1 --userName root
+hint
+entity jpa --class uk.ac.bbk.bookface.domain.Author --table author
+entity jpa --class uk.ac.bbk.bookface.domain.Book --table book
+entity jpa --class uk.ac.bbk.bookface.domain.Favourites --table favourites
+entity jpa --class uk.ac.bbk.bookface.domain.Comments --table comments
+entity jpa --class uk.ac.bbk.bookface.domain.Person --table person
+field string --fieldName name --class ~.domain.Author --column name --comment "The name of the author." --notNull --sizeMax 255 --sizeMin 2
+field string --fieldName title --class ~.domain.Book --column title --comment "The title of the book." --notNull --sizeMax 255 --sizeMin 2
+field number --fieldName author --type java.lang.Integer --class ~.domain.Book --column author --comment "The author of the book." --notNull
+field string --fieldName description --class ~.domain.Comments --column description --comment "The book comment." --notNull --sizeMin 2
+field number --fieldName person --type java.lang.Integer --class ~.domain.Comments --column person --comment "The person." --notNull 
+field number --fieldName book --type java.lang.Integer --class ~.domain.Comments --column book --comment "The book." --notNull 
+field number --fieldName person --type java.lang.Integer --class ~.domain.Favourites --column person --comment "The person." --notNull
+field number --fieldName book --type java.lang.Integer --class ~.domain.Favourites --column book --comment "The book." --notNull 
+field string --fieldName screenName --class ~.domain.Person --column screen_name --comment "The screen name of the person." --notNull --sizeMax 255 --sizeMin 2
+field string --fieldName emailAddress --class ~.domain.Person --column email_address --comment "The email address of the person." --notNull --sizeMax 255 --sizeMin 6
+hint
+web mvc setup
+web mvc all --package ~.web
+perform clean
+perform eclipse
+perform package
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-30 13:37:45
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-30 13:49:43
+hint
+hint eclipse
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-30 13:50:26
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-30 16:03:14
+backup
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-30 16:05:49
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-30 16:53:59
+backup
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-30 16:55:42
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-03-30 17:20:12
+hint
+security setup
+perform eclipse
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-03-30 17:27:24

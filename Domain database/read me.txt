@@ -1,0 +1,15 @@
+This folder contains the domains database related files.
+
+These files are not the physical database which is used during development.
+
+The schema needs to be exported to the actual DBMS server on the local machine.
+
+For integration testing purposes the inital state of the database is that all tables are empty.
+
+The integration tests are designed to fufil the descriptions within the scenarios.
+
+The database tables should be returned to the inital state after a test has completed.
+
+
+
+
