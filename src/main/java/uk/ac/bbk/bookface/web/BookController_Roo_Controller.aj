@@ -4,17 +4,10 @@
 package uk.ac.bbk.bookface.web;
 
 import java.io.UnsupportedEncodingException;
-<<<<<<< HEAD
-=======
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.List;
->>>>>>> 4aba367ec3bf2254b20c57242e1fedc5d8ade2bd
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,7 +19,6 @@ import org.springframework.web.util.WebUtils;
 
 import uk.ac.bbk.bookface.domain.Author;
 import uk.ac.bbk.bookface.domain.Book;
-import uk.ac.bbk.bookface.web.BookController;
 
 privileged aspect BookController_Roo_Controller {
     
