@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
+import uk.ac.bbk.bookface.domain.Author;
 import uk.ac.bbk.bookface.domain.Book;
 import uk.ac.bbk.bookface.domain.Favourites;
 import uk.ac.bbk.bookface.domain.Person;
@@ -29,6 +30,10 @@ privileged aspect FavouritesController_Roo_Controller {
         if (bindingResult.hasErrors()) {
             populateEditForm(uiModel, favourites);
             return "favouriteses/create";
+        }
+        else if(Favourites.findFavouriteByPersonIdAndBookId(httpServletRequest.getParameter("person"),httpServletRequest.getParameter("book")).size() > 0){
+        	uiModel.asMap().clear();
+            return "redirect:/favouriteses?page=1&size=10";
         }
         uiModel.asMap().clear();
         favourites.persist();
@@ -50,6 +55,9 @@ privileged aspect FavouritesController_Roo_Controller {
     
     @RequestMapping(produces = "text/html")
     public String FavouritesController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    	
+    	int id = Integer.parseInt(Person.findPersonByScreenName(SecurityContextHolder.getContext().getAuthentication().getName()).getId().toString());
+    	
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
@@ -57,7 +65,7 @@ privileged aspect FavouritesController_Roo_Controller {
             float nrOfPages = (float) Favourites.countFavouriteses() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("favouriteses", Favourites.findAllFavouriteses());
+        	uiModel.addAttribute("favouriteses", Favourites.findAllFavouriteses());
         }
         return "favouriteses/list";
     }

@@ -27,6 +27,10 @@ privileged aspect BookController_Roo_Controller {
             populateEditForm(uiModel, book);
             return "books/create";
         }
+        else if(Book.findBookByTitleAndAuthorId(httpServletRequest.getParameter("title"),httpServletRequest.getParameter("author")).size() > 0){
+        	uiModel.asMap().clear();
+            return "redirect:/books?page=1&size=10";
+        }
         uiModel.asMap().clear();
         book.persist();
         return "redirect:/books/" + encodeUrlPathSegment(book.getId().toString(), httpServletRequest);

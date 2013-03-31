@@ -34,7 +34,13 @@ privileged aspect Favourites_Roo_Jpa_ActiveRecord {
     }
     
     public static List<Favourites> Favourites.findFavouritesEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Favourites o", Favourites.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    	return entityManager().createQuery("SELECT o FROM Favourites o", Favourites.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
+    public static List<Favourites> Favourites.findFavouriteByPersonIdAndBookId(String personId, String bookId) {
+    	if (personId == null) return null;
+    	if (bookId == null) return null;
+        return entityManager().createQuery("SELECT o FROM Favourites o WHERE o.person = \'"+personId.toLowerCase()+"\' AND o.book = '"+bookId.toLowerCase()+"'", Favourites.class).getResultList();
     }
     
     @Transactional

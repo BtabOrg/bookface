@@ -37,6 +37,12 @@ privileged aspect Book_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM Book o", Book.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
+    public static List<Book> Book.findBookByTitleAndAuthorId(String title, String authorId) {
+    	if (title == null) return null;
+    	if (authorId == null) return null;
+        return entityManager().createQuery("SELECT o FROM Book o WHERE o.title= \'"+title.toLowerCase()+"\' AND o.author = '"+authorId.toLowerCase()+"'", Book.class).getResultList();
+    }
+    
     @Transactional
     public void Book.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
