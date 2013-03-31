@@ -8,6 +8,11 @@ import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 
+/**
+ * The Book domain entity. This represents a manuscript which has been authored.
+ * The book has a title and it also has the name of the author.
+ * @author Developers Bernard Baker & Luis Da Silva
+ */
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(table = "book")

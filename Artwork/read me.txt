@@ -1,0 +1,2 @@
+This folder contains the Bookface_V1.0 art work files.
+- banner-graphic.psd (The banner shown on the header of the web application).

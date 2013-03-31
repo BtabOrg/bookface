@@ -21,7 +21,7 @@
 	            <menu:item id="i_comments_list" messageCode="global_menu_list" url="/commentses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="8YG7hhBbzDcGnb8m4ViVHNOl5mw="/>
 	        </menu:category>
 	        <menu:category id="c_person" z="Cz66KzcF6GdyygpbYfiE+EkFFFA=">
-	            <menu:item id="i_person_new" messageCode="global_menu_new" url="/people?form" z="IlD8NFD64X8egaRrgHbQeWKT68I="/>
+	            <!--<menu:item id="i_person_new" messageCode="global_menu_new" url="/people?form" z="IlD8NFD64X8egaRrgHbQeWKT68I="/>-->
 	            <menu:item id="i_person_list" messageCode="global_menu_list" url="/people?page=1&amp;size=${empty param.size ? 10 : param.size}" z="MFjeqYeiMgVzk2P/OWfFpXZhhS4="/>
 	        </menu:category>
         </sec:authorize>
