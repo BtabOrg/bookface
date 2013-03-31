@@ -15,11 +15,11 @@ privileged aspect Book_Roo_JavaBean {
         this.title = title;
     }
     
-    public Integer Book.getAuthor() {
+    public String Book.getAuthor() {
         return this.author;
     }
     
-    public void Book.setAuthor(Integer author) {
+    public void Book.setAuthor(String author) {
         this.author = author;
     }
     

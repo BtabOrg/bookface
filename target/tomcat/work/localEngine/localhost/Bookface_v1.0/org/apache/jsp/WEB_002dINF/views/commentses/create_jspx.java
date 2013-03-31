@@ -126,30 +126,6 @@ public final class create_jspx extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_field_005finput_005f1(javax.servlet.jsp.tagext.JspTag _jspx_parent, PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  field:input
-    org.apache.jsp.tag.web.form.fields.input_tagx _jspx_th_field_005finput_005f1 = new org.apache.jsp.tag.web.form.fields.input_tagx();
-    org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_field_005finput_005f1);
-    _jspx_th_field_005finput_005f1.setJspContext(_jspx_page_context);
-    _jspx_th_field_005finput_005f1.setParent(_jspx_parent);
-    // /WEB-INF/views/commentses/create.jspx(7,182) name = z type = java.lang.String reqTime = true required = false fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
-    _jspx_th_field_005finput_005f1.setZ("oCjg5QmCvYhLY3fPv9vLsInyvzs=");
-    // /WEB-INF/views/commentses/create.jspx(7,182) name = validationMessageCode type = java.lang.String reqTime = true required = false fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
-    _jspx_th_field_005finput_005f1.setValidationMessageCode("field_invalid_integer");
-    // /WEB-INF/views/commentses/create.jspx(7,182) name = required type = java.lang.Boolean reqTime = true required = false fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
-    _jspx_th_field_005finput_005f1.setRequired(new Boolean(true));
-    // /WEB-INF/views/commentses/create.jspx(7,182) name = id type = java.lang.String reqTime = true required = true fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
-    _jspx_th_field_005finput_005f1.setId("c_uk_ac_bbk_bookface_domain_Comments_person");
-    // /WEB-INF/views/commentses/create.jspx(7,182) name = field type = java.lang.String reqTime = true required = true fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
-    _jspx_th_field_005finput_005f1.setField("person");
-    _jspx_th_field_005finput_005f1.doTag();
-    org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_field_005finput_005f1);
-    return false;
-  }
-
   private boolean _jspx_meth_field_005fselect_005f0(javax.servlet.jsp.tagext.JspTag _jspx_parent, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -159,17 +135,17 @@ public final class create_jspx extends org.apache.jasper.runtime.HttpJspBase
     org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_field_005fselect_005f0);
     _jspx_th_field_005fselect_005f0.setJspContext(_jspx_page_context);
     _jspx_th_field_005fselect_005f0.setParent(_jspx_parent);
-    // /WEB-INF/views/commentses/create.jspx(8,145) name = path type = java.lang.String reqTime = true required = true fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
+    // /WEB-INF/views/commentses/create.jspx(8,148) name = path type = java.lang.String reqTime = true required = true fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
     _jspx_th_field_005fselect_005f0.setPath("/book");
-    // /WEB-INF/views/commentses/create.jspx(8,145) name = items type = java.util.Collection reqTime = true required = true fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
+    // /WEB-INF/views/commentses/create.jspx(8,148) name = items type = java.util.Collection reqTime = true required = true fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
     _jspx_th_field_005fselect_005f0.setItems((java.util.Collection) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${books}", java.util.Collection.class, (PageContext)_jspx_page_context, null, false));
-    // /WEB-INF/views/commentses/create.jspx(8,145) name = itemValue type = java.lang.String reqTime = true required = false fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
-    _jspx_th_field_005fselect_005f0.setItemValue("id");
-    // /WEB-INF/views/commentses/create.jspx(8,145) name = required type = java.lang.Boolean reqTime = true required = false fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
+    // /WEB-INF/views/commentses/create.jspx(8,148) name = itemValue type = java.lang.String reqTime = true required = false fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
+    _jspx_th_field_005fselect_005f0.setItemValue("title");
+    // /WEB-INF/views/commentses/create.jspx(8,148) name = required type = java.lang.Boolean reqTime = true required = false fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
     _jspx_th_field_005fselect_005f0.setRequired(new Boolean(true));
-    // /WEB-INF/views/commentses/create.jspx(8,145) name = id type = java.lang.String reqTime = true required = true fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
+    // /WEB-INF/views/commentses/create.jspx(8,148) name = id type = java.lang.String reqTime = true required = true fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
     _jspx_th_field_005fselect_005f0.setId("c_uk_ac_bbk_bookface_domain_Comments_book");
-    // /WEB-INF/views/commentses/create.jspx(8,145) name = field type = java.lang.String reqTime = true required = true fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
+    // /WEB-INF/views/commentses/create.jspx(8,148) name = field type = java.lang.String reqTime = true required = true fragment = false deferredValue = false expectedTypeName = java.lang.String deferredMethod = false methodSignature = null
     _jspx_th_field_005fselect_005f0.setField("book");
     _jspx_th_field_005fselect_005f0.doTag();
     org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_field_005fselect_005f0);
@@ -212,8 +188,6 @@ public final class create_jspx extends org.apache.jasper.runtime.HttpJspBase
       throws Throwable
     {
       if (_jspx_meth_field_005finput_005f0(_jspx_parent, _jspx_page_context))
-        return true;
-      if (_jspx_meth_field_005finput_005f1(_jspx_parent, _jspx_page_context))
         return true;
       if (_jspx_meth_field_005fselect_005f0(_jspx_parent, _jspx_page_context))
         return true;

@@ -46,7 +46,7 @@ privileged aspect Person_Roo_Jpa_ActiveRecord {
     public static List<Person> Person.findPersonScreenNameAndEmailAddress(String screenName, String emailAddress) {
     	if (screenName == null) return null;
     	if (emailAddress == null) return null;
-        return entityManager().createQuery("SELECT o FROM Person o WHERE o.screen_name = '"+screenName+"' AND o.email_address = '"+emailAddress+"'", Person.class).getResultList();
+        return entityManager().createQuery("SELECT o FROM Person o WHERE o.screenName = '"+screenName+"' AND o.emailAddress = '"+emailAddress+"'", Person.class).getResultList();
     }
     
     @Transactional

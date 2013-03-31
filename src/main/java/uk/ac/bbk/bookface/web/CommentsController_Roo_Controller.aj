@@ -90,7 +90,7 @@ privileged aspect CommentsController_Roo_Controller {
     }
     
     void CommentsController.populateEditForm(Model uiModel, Comments comments) {
-    	comments.setPerson(Integer.parseInt(Person.findPersonByScreenName(SecurityContextHolder.getContext().getAuthentication().getName()).getId().toString()));
+    	comments.setPerson(SecurityContextHolder.getContext().getAuthentication().getName());
         uiModel.addAttribute("comments", comments);
         uiModel.addAttribute("books", Book.findAllBooks());
     }

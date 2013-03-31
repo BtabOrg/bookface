@@ -15,19 +15,19 @@ privileged aspect Comments_Roo_JavaBean {
         this.description = description;
     }
     
-    public Integer Comments.getPerson() {
+    public String Comments.getPerson() {
         return this.person;
     }
     
-    public void Comments.setPerson(Integer person) {
+    public void Comments.setPerson(String person) {
         this.person = person;
     }
     
-    public Integer Comments.getBook() {
+    public String Comments.getBook() {
         return this.book;
     }
     
-    public void Comments.setBook(Integer book) {
+    public void Comments.setBook(String book) {
         this.book = book;
     }
     

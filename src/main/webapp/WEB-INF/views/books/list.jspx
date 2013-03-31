@@ -5,7 +5,7 @@
     <page:list id="pl_uk_ac_bbk_bookface_domain_Book" items="${books}" z="b05gviw0dTeV7IzQBuR7wgfCvzM=">
         <table:table data="${books}" id="l_uk_ac_bbk_bookface_domain_Book" path="/books" z="B8gH0hTMf7I8jQtR7TAafbR6Eeg=">
             <table:column id="c_uk_ac_bbk_bookface_domain_Book_author" property="author" z="u/VM3DxRME31rgoIdwCEXley0sE="/>
-            <table:column id="c_uk_ac_bbk_bookface_domain_Book_title" property="title" z="FZtkRPTzfDQtprsNrlDPoDU4o/o="/>
+            <table:column id="c_uk_ac_bbk_bookface_domain_Book_title" property="title" z="FZtkRPTzfDQtprsNrlDPoDU4o/o="/>	        
         </table:table>
     </page:list>
 </div>

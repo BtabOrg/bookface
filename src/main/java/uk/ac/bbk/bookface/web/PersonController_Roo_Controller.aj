@@ -23,19 +23,6 @@ privileged aspect PersonController_Roo_Controller {
 	
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String PersonController.create(@Valid Person person, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-    	if(httpServletRequest.getParameter("j_username")!=null && httpServletRequest.getParameter("j_password")!=null){
-    		String screenName = httpServletRequest.getParameter("j_username");
-    		String emailAddress = httpServletRequest.getParameter("j_password");
-			return "redirect:/";
-    		/*
-    		if(Person.findPersonScreenNameAndEmailAddress(screenName, emailAddress).size() == 1){
-    			return "redirect:/";
-    		}else{
-    			populateEditForm(uiModel, person);
-                return "people/create";
-    		}
-    		*/
-    	}
     	if (bindingResult.hasErrors()) {
             populateEditForm(uiModel, person);
             return "people/create";

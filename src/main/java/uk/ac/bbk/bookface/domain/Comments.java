@@ -19,9 +19,11 @@ public class Comments {
 
     @NotNull
     @Column(name = "person")
-    private Integer person;
+    @Size(min = 2, max = 255)
+    private String person;
 
     @NotNull
     @Column(name = "book")
-    private Integer book;
+    @Size(min = 2, max = 255)
+    private String book;
 }

@@ -20,6 +20,7 @@ public class Book {
 
     @NotNull
     @Column(name = "author")
-    private Integer author;
+    @Size(min = 2, max = 255)
+    private String author;
     
 }

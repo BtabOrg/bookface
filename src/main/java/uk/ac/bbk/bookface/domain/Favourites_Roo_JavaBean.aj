@@ -7,19 +7,19 @@ import uk.ac.bbk.bookface.domain.Favourites;
 
 privileged aspect Favourites_Roo_JavaBean {
     
-    public Integer Favourites.getPerson() {
+    public String Favourites.getPerson() {
         return this.person;
     }
     
-    public void Favourites.setPerson(Integer person) {
+    public void Favourites.setPerson(String person) {
         this.person = person;
     }
     
-    public Integer Favourites.getBook() {
+    public String Favourites.getBook() {
         return this.book;
     }
     
-    public void Favourites.setBook(Integer book) {
+    public void Favourites.setBook(String book) {
         this.book = book;
     }
     

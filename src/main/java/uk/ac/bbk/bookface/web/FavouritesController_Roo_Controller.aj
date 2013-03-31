@@ -36,6 +36,7 @@ privileged aspect FavouritesController_Roo_Controller {
             return "redirect:/favouriteses?page=1&size=10";
         }
         uiModel.asMap().clear();
+        favourites.setPerson(SecurityContextHolder.getContext().getAuthentication().getName());
         favourites.persist();
         return "redirect:/favouriteses/" + encodeUrlPathSegment(favourites.getId().toString(), httpServletRequest);
     }
@@ -98,7 +99,7 @@ privileged aspect FavouritesController_Roo_Controller {
     }
     
     void FavouritesController.populateEditForm(Model uiModel, Favourites favourites) {
-    	favourites.setPerson(Integer.parseInt(Person.findPersonByScreenName(SecurityContextHolder.getContext().getAuthentication().getName()).getId().toString()));
+    	//favourites.setPerson(Person.findPersonByScreenName(SecurityContextHolder.getContext().getAuthentication().getName());
         uiModel.addAttribute("favourites", favourites);
         uiModel.addAttribute("books", Book.findAllBooks());
     }
