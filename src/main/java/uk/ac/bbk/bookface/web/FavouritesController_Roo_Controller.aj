@@ -17,8 +17,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
+<<<<<<< HEAD
 import uk.ac.bbk.bookface.domain.Book;
 import uk.ac.bbk.bookface.domain.Favourites;
+=======
+import uk.ac.bbk.bookface.domain.Author;
+import uk.ac.bbk.bookface.domain.Book;
+import uk.ac.bbk.bookface.domain.Favourites;
+import uk.ac.bbk.bookface.domain.Person;
+>>>>>>> 4aba367ec3bf2254b20c57242e1fedc5d8ade2bd
 import uk.ac.bbk.bookface.web.FavouritesController;
 
 privileged aspect FavouritesController_Roo_Controller {
@@ -53,7 +60,14 @@ privileged aspect FavouritesController_Roo_Controller {
     }
     
     @RequestMapping(produces = "text/html")
+<<<<<<< HEAD
     public String FavouritesController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {    	
+=======
+    public String FavouritesController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    	
+    	int id = Integer.parseInt(Person.findPersonByScreenName(SecurityContextHolder.getContext().getAuthentication().getName()).getId().toString());
+    	
+>>>>>>> 4aba367ec3bf2254b20c57242e1fedc5d8ade2bd
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;

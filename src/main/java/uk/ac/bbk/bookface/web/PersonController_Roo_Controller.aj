@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
+<<<<<<< HEAD
+=======
+import uk.ac.bbk.bookface.domain.Author;
+>>>>>>> 4aba367ec3bf2254b20c57242e1fedc5d8ade2bd
 import uk.ac.bbk.bookface.domain.Person;
 import uk.ac.bbk.bookface.web.PersonController;
 
