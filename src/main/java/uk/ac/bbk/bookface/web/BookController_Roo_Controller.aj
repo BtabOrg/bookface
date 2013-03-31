@@ -4,6 +4,12 @@
 package uk.ac.bbk.bookface.web;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -54,7 +60,8 @@ privileged aspect BookController_Roo_Controller {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("books", Book.findBookEntries(firstResult, sizeNo));
+            List<Book> books = Book.findBookEntries(firstResult, sizeNo);
+            uiModel.addAttribute("books", books);
             float nrOfPages = (float) Book.countBooks() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {

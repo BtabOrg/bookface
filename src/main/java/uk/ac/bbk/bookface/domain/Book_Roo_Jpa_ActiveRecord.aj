@@ -32,7 +32,7 @@ privileged aspect Book_Roo_Jpa_ActiveRecord {
         if (id == null) return null;
         return entityManager().find(Book.class, id);
     }
-    
+
     public static List<Book> Book.findBookEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM Book o", Book.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
