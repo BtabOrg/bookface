@@ -19,7 +19,6 @@ import org.springframework.web.util.WebUtils;
 
 import uk.ac.bbk.bookface.domain.Book;
 import uk.ac.bbk.bookface.domain.Comments;
-import uk.ac.bbk.bookface.domain.Person;
 import uk.ac.bbk.bookface.web.CommentsController;
 
 privileged aspect CommentsController_Roo_Controller {

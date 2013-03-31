@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
-import uk.ac.bbk.bookface.domain.Author;
 import uk.ac.bbk.bookface.domain.Person;
 import uk.ac.bbk.bookface.web.PersonController;
 
