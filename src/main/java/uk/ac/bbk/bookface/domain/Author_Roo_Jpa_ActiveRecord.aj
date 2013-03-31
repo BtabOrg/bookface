@@ -37,6 +37,11 @@ privileged aspect Author_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM Author o", Author.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
+    public static List<Author> Author.findAuthorByName(String name) {
+        if (name == null) return null;
+        return entityManager().createQuery("SELECT o FROM Author o WHERE o.name = \'"+name.toLowerCase()+"\'", Author.class).getResultList();
+    }
+    
     @Transactional
     public void Author.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();

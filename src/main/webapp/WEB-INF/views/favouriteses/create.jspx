@@ -3,7 +3,8 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_uk_ac_bbk_bookface_domain_Favourites" modelAttribute="favourites" path="/favouriteses" render="${empty dependencies}" z="KZHfTl8uY3J8jszQhNrTKNPkPN4=">
-        <field:input field="person" id="c_uk_ac_bbk_bookface_domain_Favourites_person" required="true" validationMessageCode="field_invalid_integer" z="WXJ0gjL58g/9IKUvhimsHjcAZf8="/>
+	<field:input field="person" id="c_uk_ac_bbk_bookface_domain_Favourites_person" required="true" validationMessageCode="field_invalid_integer" z="WXJ0gjL58g/9IKUvhimsHjcAZf8="/>
+	<!--<input type="hidden" name="person" field="person" id="c_uk_ac_bbk_bookface_domain_Favourites_person" value="${person}"/>-->
         <field:select field="book" id="c_uk_ac_bbk_bookface_domain_Favourites_book" required="true" itemValue="id" items="${books}" path="/book"/> <!-- validationMessageCode="field_invalid_integer" z="g8SRljzno7gIrNMbZrQZQxaJaQM=" -->
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_uk_ac_bbk_bookface_domain_Favourites" render="${not empty dependencies}" z="cNKkawjByB25GdPUng6JwGUeuDM="/>

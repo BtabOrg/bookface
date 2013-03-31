@@ -25,6 +25,10 @@ privileged aspect AuthorController_Roo_Controller {
             populateEditForm(uiModel, author);
             return "authors/create";
         }
+        else if(Author.findAuthorByName(httpServletRequest.getParameter("name")).size() > 0){
+            populateEditForm(uiModel, author);
+            return "authors/create";
+        }
         uiModel.asMap().clear();
         author.persist();
         return "redirect:/authors/" + encodeUrlPathSegment(author.getId().toString(), httpServletRequest);

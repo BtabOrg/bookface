@@ -14,16 +14,35 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
+
+import uk.ac.bbk.bookface.domain.Author;
 import uk.ac.bbk.bookface.domain.Person;
 import uk.ac.bbk.bookface.web.PersonController;
 
 privileged aspect PersonController_Roo_Controller {
-    
+	
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String PersonController.create(@Valid Person person, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
+    	if(httpServletRequest.getParameter("j_username")!=null && httpServletRequest.getParameter("j_password")!=null){
+    		String screenName = httpServletRequest.getParameter("j_username");
+    		String emailAddress = httpServletRequest.getParameter("j_password");
+			return "redirect:/";
+    		/*
+    		if(Person.findPersonScreenNameAndEmailAddress(screenName, emailAddress).size() == 1){
+    			return "redirect:/";
+    		}else{
+    			populateEditForm(uiModel, person);
+                return "people/create";
+    		}
+    		*/
+    	}
+    	if (bindingResult.hasErrors()) {
             populateEditForm(uiModel, person);
             return "people/create";
+        }
+    	else if(Person.findPersonScreenNameAndEmailAddress(httpServletRequest.getParameter("screenName"), httpServletRequest.getParameter("emailAddress")).size() > 0){
+        	populateEditForm(uiModel, person);
+        	return "authors/create";
         }
         uiModel.asMap().clear();
         person.persist();

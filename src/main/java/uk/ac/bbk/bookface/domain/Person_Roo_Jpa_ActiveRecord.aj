@@ -33,8 +33,20 @@ privileged aspect Person_Roo_Jpa_ActiveRecord {
         return entityManager().find(Person.class, id);
     }
     
+    public static Person Person.findPersonByScreenName(String id) {
+        if (id == null) return null;
+        String query = "SELECT o FROM Person o WHERE o.screenName = '"+id+"'";
+        return entityManager().createQuery(query, Person.class).getSingleResult();
+    }
+    
     public static List<Person> Person.findPersonEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM Person o", Person.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
+    public static List<Person> Person.findPersonScreenNameAndEmailAddress(String screenName, String emailAddress) {
+    	if (screenName == null) return null;
+    	if (emailAddress == null) return null;
+        return entityManager().createQuery("SELECT o FROM Person o WHERE o.screen_name = '"+screenName+"' AND o.email_address = '"+emailAddress+"'", Person.class).getResultList();
     }
     
     @Transactional

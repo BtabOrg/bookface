@@ -65,7 +65,7 @@ body {
 
 #menu h2 {
 	color: #fff;
-	background: #648C1D;
+	background: rgb(10,10,100);
 	text-transform: uppercase;
 	font-weight:bold;
 	font-size: 12px;
@@ -79,7 +79,7 @@ body {
 }
 
 #menu a:hover {
-	color: #648C1D;
+	color: rgb(10,10,100);
 	background: #fff;
 }
 
@@ -200,19 +200,19 @@ tr:nth-child(even) {
 }
 
 a:link {
-	color: #7db223;
+	color: rgb(10,10,100);
 }
 
 a:hover {
-	color: #456314;
+	color: rgb(10,10,100);
 }
 
 a:active {
-	color: #7db223;
+	color: rgb(10,10,100);
 }
 
 a:visited {
-	color: #7db223;
+	color: rgb(10,10,100);
 }
 
 li {

@@ -9,6 +9,12 @@
     </h3>
     <p>
       <spring:message code="welcome_text" />
+      <ul>
+      	<li><spring:message code="welcome_text_1" /></li>
+      	<li><spring:message code="welcome_text_2" /></li>
+      	<li><spring:message code="welcome_text_3" /></li>
+      	<li><spring:message code="welcome_text_4" /></li>
+      </ul>
     </p>
   </util:panel>
 </div>

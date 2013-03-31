@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
+
+import uk.ac.bbk.bookface.domain.Author;
 import uk.ac.bbk.bookface.domain.Book;
 import uk.ac.bbk.bookface.web.BookController;
 
@@ -86,6 +88,7 @@ privileged aspect BookController_Roo_Controller {
     
     void BookController.populateEditForm(Model uiModel, Book book) {
         uiModel.addAttribute("book", book);
+        uiModel.addAttribute("authors", Author.findAllAuthors());
     }
     
     String BookController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

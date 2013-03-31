@@ -6,6 +6,8 @@ package uk.ac.bbk.bookface.web;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
+
+import uk.ac.bbk.bookface.domain.Book;
 import uk.ac.bbk.bookface.domain.Favourites;
+import uk.ac.bbk.bookface.domain.Person;
 import uk.ac.bbk.bookface.web.FavouritesController;
 
 privileged aspect FavouritesController_Roo_Controller {
@@ -85,7 +90,9 @@ privileged aspect FavouritesController_Roo_Controller {
     }
     
     void FavouritesController.populateEditForm(Model uiModel, Favourites favourites) {
+    	favourites.setPerson(Integer.parseInt(Person.findPersonByScreenName(SecurityContextHolder.getContext().getAuthentication().getName()).getId().toString()));
         uiModel.addAttribute("favourites", favourites);
+        uiModel.addAttribute("books", Book.findAllBooks());
     }
     
     String FavouritesController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
