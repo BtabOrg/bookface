@@ -25,7 +25,7 @@ privileged aspect Comments_Roo_Jpa_ActiveRecord {
     }
     
     public static List<Comments> Comments.findAllCommentses() {
-        return entityManager().createQuery("SELECT o FROM Comments o", Comments.class).getResultList();
+    	return entityManager().createQuery("SELECT o FROM Comments o", Comments.class).getResultList();
     }
     
     public static Comments Comments.findComments(Long id) {
