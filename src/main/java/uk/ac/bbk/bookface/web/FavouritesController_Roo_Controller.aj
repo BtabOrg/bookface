@@ -99,7 +99,7 @@ privileged aspect FavouritesController_Roo_Controller {
     }
     
     void FavouritesController.populateEditForm(Model uiModel, Favourites favourites) {
-    	//favourites.setPerson(Person.findPersonByScreenName(SecurityContextHolder.getContext().getAuthentication().getName());
+    	favourites.setPerson(SecurityContextHolder.getContext().getAuthentication().getName());
         uiModel.addAttribute("favourites", favourites);
         uiModel.addAttribute("books", Book.findAllBooks());
     }

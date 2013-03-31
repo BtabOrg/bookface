@@ -26,7 +26,7 @@ privileged aspect CommentsController_Roo_Controller {
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String CommentsController.create(@Valid Comments comments, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
+    	if (bindingResult.hasErrors()) {
             populateEditForm(uiModel, comments);
             return "commentses/create";
         }
